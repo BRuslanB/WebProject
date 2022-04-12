@@ -3,246 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .general {width: 80%; margin:auto;}
+        .header {display: flex; background-color: midnightblue; padding: 10px;}
+        .head1 {font:bold 16px Arial; color: whitesmoke;}
+        .head2 {font:12px Arial; color: lightgray; margin-right: 10px;}
+        .link_edit {color:royalblue; text-decoration:none;}
+        .margin_left {margin: 0 0 0 auto;}
+        .left {margin-top:12px; width: 25%;}
+        .center {padding:0 20px; margin-top:10px; width: 50%;}
+        .right {margin-top:12px; width: 25%;}
+        .flex {display: flex;}
+        .border {border:1px solid lightgray;}
+        .row_left {border:1px solid lightgray; border-top:none; padding:6px;}
+        .row_inner_left {margin-left: 10px;}
+        .row_text {font: 12px Arial; color:dimgray;}
+        .name_text1 {font:bold 15px Arial; padding:10px;}
+        .name_text2 {font:bold 15px Arial; padding:10px 0;}
+        .motto {font: 12px Arial; color: darkgrey; padding:0 10px 20px 10px; text-align: center;}
+        .news_text {font: 12px Arial; color: grey; padding:10px; text-align: justify;}
+        .button_text {font: 11px Arial; background-color: midnightblue; color: snow; border-style: none; padding:8px; margin:5px 0 15px 10px;}
+        .row_right {border:1px solid lightgray;}
+        .row_inner_right {border-top: none;}
+        .row_first1 {font:bold 12px Arial; color: black; padding: 5px;}
+        .row_first2 {font: 12px Arial; color: gray; padding:5px; margin: 0 0 0 auto;}
+        .row_two {font: 12px Arial; color:dimgray; padding: 5px;}
+        .row_three {font: 11px Arial; color: gray; padding: 5px;}
+    </style>
 </head>
-<body>
-    <div style="width: 80%; margin:auto;">
-        <div class="header" style="display: flex; background-color: midnightblue; padding: 10px;">
-            <div>
-                <span style="font:bold 16px Arial; color: whitesmoke;">
-                    Facebook
-                </span>
+    <body>
+        <div class="general">
+            <div class="header">
+                <div>
+                    <span class="head1">
+                        Facebook
+                    </span>
+                </div>
+                <div class="margin_left">
+                    <span class="head2">
+                        Logout
+                    </span>
+                </div>
             </div>
-            <div style="margin: 0 0 0 auto;">
-                <span style="font:12px Arial; color: lightgray; margin-right: 10px;">
-                    Logout
-                </span>
+            <div class="flex">
+                <div class="left">
+                    <div class="border">
+                        <div>
+                            <img src="Ilyas.png" width="100%">
+                        </div>
+                        <div class="name_text1">
+                            <span>
+                                Ilyas Zhuanyshev
+                                <a class="link_edit" href="#">edit</a>
+                            </span>
+                        </div>
+                        <div class="motto">
+                            <span>
+                                &mdash; "No matter how good you are, someone is always going to be against you.
+                                But never let them be the limit of your success."
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Profile
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Message (3)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Videos
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Photos
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Groups
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_left">
+                        <div class="row_inner_left">
+                            <span class="row_text">
+                                My Games
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="name_text2">
+                        <span>
+                            Assylkhan Aldanazar
+                        </span>
+                    </div>
+                    <img src="Pic1.png" width="100%">
+                    <div class="news_text">
+                        <span>
+                            Just recently, the guys graduated from the Java Standard Edition Course.
+                            I am very happy, and good luck from them all!
+                        </span>
+                    </div>
+                    <button class="button_text">
+                        View More
+                    </button>
+                        <div class="name_text2">
+                            <span>
+                                Aybek Bagit
+                            </span>
+                        </div>
+                    <img src="Pic2.png" width="100%">
+                    <div class="news_text">
+                        <span>
+                            I am very angry that Real Madrid lost his captain!
+                            Good Luck Sergio Ramos, you are the best.
+                        </span>
+                    </div>
+                    <button class="button_text">
+                        View More
+                    </button>
+                </div>
+                <div class="right">
+                    <div class="row_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_right row_inner_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_right row_inner_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_right row_inner_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_right row_inner_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row_right row_inner_right">
+                        <div class="flex">
+                            <div class="row_first1">
+                                <span>
+                                    Locatelli moves to Juventus
+                                </span>
+                            </div>
+                            <div class="row_first2">
+                                 <span>
+                                    12:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row_two">
+                            <span>
+                                Transfer cost - 40M euro
+                            </span>
+                        </div>
+                        <div class="row_three">
+                            <span>
+                                La Gazetta de la Sport
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div style="display: flex;">
-            <div class="left" style="margin-top:10px; width: 25%;">
-                <div style="border:1px solid lightgray;">
-                    <div style="border-collapse: collapse;">
-                        <img src="Ilyas.png" width="100%">
-                    </div>
-                    <div style="font:bold 15px Arial; padding:10px;">
-                        <span style="font:bold 15px Arial;">
-                            Ilyas Zhuanyshev
-                            <a href="#" style="color:royalblue; text-decoration:none;">edit</a>
-                        </span>
-                    </div>
-                    <div style="padding:0 10px 20px 10px; text-align: center;">
-                        <span style="font: 12px Arial; color: darkgrey;">
-                            &mdash; "No matter how good you are, someone is always going to be against you.
-                            But never let them be the limit of your success."
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Profile
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Message (3)
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Videos
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Photos
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Groups
-                        </span>
-                    </div>
-                </div>
-                <div class="row_left" style="border:1px solid lightgray; border-top:none; padding:5px;">
-                    <div style="margin-left: 10px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            My Games
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="center" style="padding:0 20px; width: 50%;">
-                <p style="font:bold 15px Arial">Assylkhan Aldanazar</p>
-                <img src="Pic1.png" width="100%">
-                <p style="font: 12px Arial; color: grey; padding:5px; text-align: justify;">
-                    Just recently, the guys graduated from the Java Standard Edition Course.
-                    I am very happy, and good luck from them all!
-                </p>
-                <button style="font: 11px Arial; background-color: midnightblue; color: snow; border-style: none; padding:7px;">View More</button>
-                <p style="font:bold 15px Arial">Aybek Bagit</p>
-                <img src="Pic2.png" width="100%">
-                <p style="font: 12px Arial; color: grey; padding:5px; text-align: justify;">
-                    I am very angry that Real Madrid lost his captain!
-                    Good Luck Sergio Ramos, you are the best.
-                </p>
-                <button style="font: 11px Arial; background-color: midnightblue; color: snow; border-style: none; padding:7px;">View More</button>
-            </div>
-            <div class="right" style="margin-top:10px; width: 25%;">
-                <div class="row_right" style="border:1px solid lightgray;">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-                <div class="row_right row_inner_right" style="border:1px solid lightgray; border-top: none">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-                <div class="row_right row_inner_right" style="border:1px solid lightgray; border-top: none">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-                <div class="row_right row_inner_right" style="border:1px solid lightgray; border-top: none">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-                <div class="row_right row_inner_right" style="border:1px solid lightgray; border-top: none">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-                <div class="row_right row_inner_right" style="border:1px solid lightgray; border-top: none">
-                    <div style="display: flex;">
-                        <div class="row_first1" style="padding: 5px 5px 0 5px;">
-                            <span style="font:bold 12px Arial; color: black;">
-                                Locatelli moves to Juventus
-                            </span>
-                        </div>
-                        <div class="row_first2" style="margin: 0 0 0 auto; padding:0 5px;">
-                             <span style="font: 12px Arial; color: gray;">
-                                12:55
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row_two" style="padding: 5px;">
-                        <span style="font: 12px Arial; color:dimgray;">
-                            Transfer cost - 40M euro
-                        </span>
-                    </div>
-                    <div class="row_three" style="padding:0 0 5px 5px;">
-                        <span style="font: 11px Arial; color: gray;">
-                            La Gazetta de la Sport
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

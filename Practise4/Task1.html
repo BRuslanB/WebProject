@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            border:1px black solid; <!-- временно -->
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: verdana, arial, sans-serif;
+        }
+
+        body {
+            color: grey;
+            font-size: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+        }
+
+        midle_top {
+            background-color: whitesmoke;
+            padding: 10px 0 0 0;
+            width: 55%;
+        }
+
+        midle_left {
+            display:flex;
+            flex-direction: column;
+            background-color: whitesmoke;
+            padding: 10px;
+            width: 30%;
+        }
+
+        article {
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+        }
+
+        nav {
+            background-color: whitesmoke;
+            width: 30%;
+        }
+
+        aside {
+            background-color: whitesmoke;
+            width: 15%;
+        }
+
+        nav {
+            order: -1;
+        }
+
+        header {
+            background-color: white;
+        }
+
+        .color1 {background-color: whitesmoke; color: grey;}
+        .color2 {background-color: white;  color: black;}
+        .color3 {background-color: white;  color: grey;}
+        .color4 {background-color: lightgray;  color: grey;}
+
+        .text1 {font:bold 16px Arial;}
+        .text2 {font:bold 12px Arial;}
+        .text3 {font:12px Arial;}
+        .text4 {font:10px Arial;}
+
+        .border1 {border-style: none; border-radius: 5px;}
+
+        .truncate {
+            white-space: nowrap; /* Текст не переносится */
+            overflow: hidden; /* Обрезаем всё за пределами блока */
+            text-overflow: ellipsis; /* Добавляем многоточие */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex;">
+            <div>
+                <img src="logo.png" style="width: 20%;">
+            </div>
+            <div style="margin: auto 0;">
+                <span class="text1 color2">вконтакте</span>
+            </div>
+            <div style="padding: 5px; margin: auto 0;">
+                <input type="text" placeholder="Поиск" style="background-color: whitesmoke; border-radius:5px; border-style: none; padding: 5px;">
+            </div>
+            <div style="margin: auto 0;">
+                <span class="text2 color2">Ilyas</span>
+            </div>
+            <div>
+                <img src="Pic1.png" style="border-radius:50%; width:20%">
+            </div>
+        </div>
+    </header>
+    <main>
+       <midle_top>
+            <article>
+                <midle_left>
+                    <div style="background-color: white; padding: 5px 0;">
+                        <div>
+                             <img src="Pic1.png" width="100%">
+                        </div>
+                        <div style="padding: 10px 0;">
+                            <button class="color4 text3 border1" style="padding: 5px 0; width: 100%;">Редактировать</button>
+                        </div>
+                        <div style="padding: 10px 0;">
+                            <span class="color3 text3">
+                                Статистика страницы
+                            </span>
+                        </div>
+                        <div style="padding: 10px 0;">
+                            <span class="color3 text3">
+                                Воспоминания
+                            </span>
+                        </div>
+                        <div style="padding: 10px 0;">
+                            <span class="color3 text3">
+                                Денежные переводы
+                            </span>
+                        </div>
+                    </div>
+                    <div style="display:flex; background-color: white;padding: 5px;  margin: 10px 0;">
+                        <div>
+                            <span class="text2 color2">
+                                Укажите ваши контакты
+                            </span>
+                        </div>
+                        <div style="margin: 0 0 0 auto;">
+                            <span class="text2 color3">
+                                &#215;
+                            </span>
+                        </div>
+                    </div>
+                    <div style="background-color: white; padding: 0;">
+                        <div style="display: flex;">
+                            <span class="color2 text4">
+                                Друзья &nbsp;
+                            </span>
+                            <span class="color3 text4">
+                                1484
+                            </span>
+                            <div style="margin: 0 0 0 auto">
+                                <span class="color3 text4">
+                                    Обновления
+                                </span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-wrap:wrap; padding: 0;">
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Дамир
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Кайрат
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Андрей
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Айнур
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Бексултан
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: white; padding: 0; margin-top: 2px;">
+                        <div style="display: flex;">
+                            <span class="color2 text4">
+                                Друзья онлайн &nbsp;
+                            </span>
+                            <span class="color3 text4">
+                                42
+                            </span>
+                        </div>
+                        <div style="display: flex; flex-wrap:wrap;">
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Бытырбек
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div class="truncate" style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Шермухан
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                                <div style="text-align: center;">
+                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
+                                </div>
+                                <div class="truncate" style="text-align: center;">
+                                    <span class="color3 text4">
+                                        Мухамедалин
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </midle_left>
+            </article>
+        </midle_top>
+        <nav>
+            <p>Navigation</p>
+        </nav>
+        <aside>
+            <p>Sidebar</p>
+        </aside>
+    </main>
+</body>
+</html>

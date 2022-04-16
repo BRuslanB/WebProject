@@ -6,20 +6,18 @@
     <style>
         *{
             box-sizing: border-box;
-            border:1px black solid; <!-- временно -->
+            <!-- border:1px black solid; временно -->
         }
 
         html, body {
             padding: 0;
             margin: 0;
-            font-family: verdana, arial, sans-serif;
         }
 
         body {
-            color: grey;
+            color: black;
+            font-family: verdana, arial, sans-serif;
             font-size: 10px;
-            display: flex;
-            flex-direction: column;
         }
 
         main {
@@ -27,53 +25,84 @@
             flex-direction: row;
         }
 
-        midle_top {
-            background-color: whitesmoke;
-            padding: 10px 0 0 0;
-            width: 55%;
-        }
+            main_left {
+                display: flex;
+                flex-direction: column;
+                background-color: lightgray;
+                width: 10%;
+            }
 
-        midle_left {
-            display:flex;
-            flex-direction: column;
-            background-color: whitesmoke;
-            padding: 10px;
-            width: 30%;
-        }
+                header1 {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    background-color: white;
+                }
 
-        article {
-            display: flex;
-            flex-direction: row;
-            background-color: white;
-        }
+                div_row {
+                    background-color: lightgray;
+                    padding: 5px 0;
+                }
 
-        nav {
-            background-color: whitesmoke;
-            width: 30%;
-        }
+            main_center {
+                display: flex;
+                flex-direction: row;
+                width: 60%;
+            }
 
-        aside {
-            background-color: whitesmoke;
-            width: 15%;
-        }
+                main_center_left {
+                    display:flex;
+                    flex-direction: column;
+                    background-color: lightgray;
+                    width: 30%;
+                }
 
-        nav {
-            order: -1;
-        }
+                    header2 {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: white;
+                    }
 
-        header {
-            background-color: white;
-        }
+                main_center_right {
+                        display:flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        background-color: lightgray;
+                        width: 70%;
+                }
 
-        .color1 {background-color: whitesmoke; color: grey;}
-        .color2 {background-color: white;  color: black;}
-        .color3 {background-color: white;  color: grey;}
-        .color4 {background-color: lightgray;  color: grey;}
+                    header3 {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+                        background-color: white;
+                    }
+
+            main_box {
+                    display:flex;
+                    flex-direction: column;
+                    background-color: lightgray;
+                    width: 15%;
+                }
+
+                header4 {
+                    background-color: white;
+                    height: 5ex;
+                }
+
+        .color1 {background-color: white; color: darkblue;}
+        .color2 {background-color: white; color: black;}
+        .color3 {background-color: white; color: grey;}
+        .color4 {background-color: lightgray; color: grey;}
 
         .text1 {font:bold 16px Arial;}
         .text2 {font:bold 12px Arial;}
         .text3 {font:12px Arial;}
         .text4 {font:10px Arial;}
+        .text6 {font:14px Verdana;}
 
         .border1 {border-style: none; border-radius: 5px;}
 
@@ -82,185 +111,411 @@
             overflow: hidden; /* Обрезаем всё за пределами блока */
             text-overflow: ellipsis; /* Добавляем многоточие */
         }
+
+        hr {
+            border: none; /* Убираем границу */
+            background-color: darkgrey; /* Цвет линии */
+            color: darkgrey; /* Цвет линии для IE6-7 */
+            margin: auto 0;
+            height: 1px; /* Толщина линии */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div style="display: flex;">
-            <div>
-                <img src="logo.png" style="width: 20%;">
-            </div>
-            <div style="margin: auto 0;">
-                <span class="text1 color2">вконтакте</span>
-            </div>
-            <div style="padding: 5px; margin: auto 0;">
-                <input type="text" placeholder="Поиск" style="background-color: whitesmoke; border-radius:5px; border-style: none; padding: 5px;">
-            </div>
-            <div style="margin: auto 0;">
-                <span class="text2 color2">Ilyas</span>
-            </div>
-            <div>
-                <img src="Pic1.png" style="border-radius:50%; width:20%">
-            </div>
-        </div>
-    </header>
     <main>
-       <midle_top>
-            <article>
-                <midle_left>
-                    <div style="background-color: white; padding: 5px 0;">
-                        <div>
-                             <img src="Pic1.png" width="100%">
-                        </div>
-                        <div style="padding: 10px 0;">
-                            <button class="color4 text3 border1" style="padding: 5px 0; width: 100%;">Редактировать</button>
-                        </div>
-                        <div style="padding: 10px 0;">
+        <main_box>
+            <header4></header4>
+            <div_row></div_row>
+        </main_box>
+        <main_left>
+            <header1>
+                <header4></header4>
+                <img src="logo.png" style="width:20%;">
+                <div style="margin:auto 0;">
+                    <span class="text1 color2">вконтакте</span>
+                </div>
+            </header1>
+            <div>
+                <br>
+                <p>Моя страница</p>
+                <p>Новости</p>
+                <p>Мессенджер</p>
+                <p>Друзья</p>
+                <p>Сообшества</p>
+                <p>Фотографии</p>
+                <p>Музыка</p>
+                <p>Видео</p>
+                <p>Клипы</p>
+                <p>Игры</p>
+                <hr>
+            </div>
+            <div>
+                <p>Мини приложения</p>
+                <p>VK Pay</p>
+                <hr>
+            </div>
+            <div>
+                <p>Маркет</p>
+                <p>Закладки</p>
+                <p>Файлы</p>
+                <p>Управление</p>
+                <hr>
+            </div>
+            <div>
+                <p>JAVA EE GROUP</p>
+            </div>
+            <div_row></div_row>
+        </main_left>
+        <main_center>
+            <main_center_left>
+                <header2>
+                    <header4></header4>
+                    <input type="text" placeholder="&#128269; Поиск" style="background-color: lightgray; border-radius:5px; border-style: none; padding: 3px;">
+                </header2>
+                <div_row></div_row>
+                <div style="background-color: white; padding: 10px; margin: 0 10px;">
+                    <div>
+                        <img src="Pic1.png" width="100%">
+                    </div>
+                    <div style="padding: 10px 0;">
+                        <button class="color4 text3 border1" style="padding: 5px 0; width: 100%;">Редактировать</button>
+                    </div>
+                    <div style="padding: 10px 0;">
                             <span class="color3 text3">
                                 Статистика страницы
                             </span>
-                        </div>
-                        <div style="padding: 10px 0;">
+                    </div>
+                    <div style="padding: 10px 0;">
                             <span class="color3 text3">
                                 Воспоминания
                             </span>
-                        </div>
-                        <div style="padding: 10px 0;">
+                    </div>
+                    <div style="padding: 10px 0;">
                             <span class="color3 text3">
                                 Денежные переводы
                             </span>
-                        </div>
                     </div>
-                    <div style="display:flex; background-color: white;padding: 5px;  margin: 10px 0;">
-                        <div>
-                            <span class="text2 color2">
-                                Укажите ваши контакты
-                            </span>
-                        </div>
-                        <div style="margin: 0 0 0 auto;">
-                            <span class="text2 color3">
-                                &#215;
-                            </span>
-                        </div>
+                </div>
+                <div style="display:flex; background-color: white; padding: 10px;  margin:10px;">
+                    <img src="contact.png" width="10%">
+                    <div>
+                        <span class="text2 color2">
+                            &nbsp; Укажите ваши контакты
+                        </span>
                     </div>
-                    <div style="background-color: white; padding: 0;">
-                        <div style="display: flex;">
-                            <span class="color2 text4">
-                                Друзья &nbsp;
-                            </span>
-                            <span class="color3 text4">
+                    <div style="margin: 0 0 0 auto;">
+                        <span class="text2 color3">
+                            &#215;
+                        </span>
+                    </div>
+                </div>
+                <div style="background-color: white; padding: 5px;  margin: 0 10px;">
+                    <div style="display: flex;">
+                        <span class="color2 text4">
+                            Друзья &nbsp;
+                        </span>
+                        <span class="color3 text4">
                                 1484
+                        </span>
+                        <div style="margin: 0 0 0 auto">
+                            <span class="color3 text4">
+                                Обновления
                             </span>
-                            <div style="margin: 0 0 0 auto">
-                                <span class="color3 text4">
-                                    Обновления
-                                </span>
-                            </div>
                         </div>
-                        <div style="display: flex; flex-wrap:wrap; padding: 0;">
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                    </div>
+                    <div style="display: flex; flex-wrap:wrap; padding: 0;">
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Дамир
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Кайрат
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Андрей
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Айнур
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Бексултан
                                     </span>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div style="background-color: white; padding: 0; margin-top: 2px;">
-                        <div style="display: flex;">
+                </div>
+                <div style="background-color: white; padding: 5px;  margin: 2px 10px 0 10px;">
+                    <div style="display: flex;">
                             <span class="color2 text4">
                                 Друзья онлайн &nbsp;
                             </span>
-                            <span class="color3 text4">
+                        <span class="color3 text4">
                                 42
                             </span>
-                        </div>
-                        <div style="display: flex; flex-wrap:wrap;">
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div style="text-align: center;">
+                    </div>
+                    <div style="display: flex; flex-wrap:wrap;">
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div style="text-align: center;">
                                     <span class="color3 text4">
                                         Бытырбек
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div class="truncate" style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div class="truncate" style="text-align: center;">
                                     <span class="color3 text4">
                                         Шермухан
                                     </span>
-                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                                <div style="text-align: center;">
-                                    <img src="Pic1.png" style="border-radius:50%; width:100%">
-                                </div>
-                                <div class="truncate" style="text-align: center;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
+                            <div style="text-align: center;">
+                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                            </div>
+                            <div class="truncate" style="text-align: center;">
                                     <span class="color3 text4">
                                         Мухамедалин
                                     </span>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </midle_left>
-            </article>
-        </midle_top>
-        <nav>
-            <p>Navigation</p>
-        </nav>
-        <aside>
-            <p>Sidebar</p>
-        </aside>
+                </div>
+            </main_center_left>
+            <main_center_right>
+                <header3>
+                    <header4></header4>
+                    <div>
+                        <span class="text2 color2">Ilyas &nbsp;</span>
+                    </div>
+                    <img src="Pic1.png" style="border-radius:50%; width:4%; margin: 0 5px">
+                    <div>
+                        <span class="text2 color3">&nbsp; &#709; &nbsp;</span>
+                    </div>
+                </header3>
+                <div_row></div_row>
+                <div style="background-color: white; padding: 10px;">
+                    <div style="display: flex; justify-content: space-between; padding: 5px;">
+                        <div style="display: flex;">
+                            <div>
+                                <span class="color2 text2">Ilyas Zhuanyshev &nbsp;</span>
+                            </div>
+                            <img src="flag.png" width="3%">
+                        </div>
+                        <div>
+                            <span class="color3 text4">online</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0 5px;">
+                        <span class="text3">
+                            www.bitlab.kz
+                        </span>
+                    </div>
+                    <br>
+                    <hr>
+                    <div style="display:flex; justify-content: flex-start; padding: 5px;">
+                        <div style="width:30%;">
+                            <p>День рождения:</p>
+                            <p>Город:</p>
+                            <p>Семейное положение:</p>
+                            <p>Место работы:</p>
+                            <p>Сайт:</p>
+                        </div>
+                        <div class="color1 text4" style="width:70%;">
+                            <p>26 мая 1989 г.</p>
+                            <p>Алматы</p>
+                            <p>Женат</p>
+                            <p>BITLAB Academy</p>
+                            <p>http://www.zhuanyshev.kz</p>
+                            <br>
+                            <p>Показать подробную информацию</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <br>
+                    <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                        <div style="display: flex; flex-direction: column; text-align: center;">
+                            <div>
+                                <span class="color1 text6">
+                                    1 484
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    друга
+                                </span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: center;">
+                            <div>
+                                <span class="color1 text6">
+                                    271
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    подписчик
+                                </span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: center;">
+                            <div>
+                                <span class="color1 text6">
+                                    97
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    фотогорафий
+                                </span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: center;">
+                            <div>
+                                <span class="color1 text6">
+                                    1 380
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    видеозаписей
+                                </span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: center;">
+                            <div>
+                                <span class="color1 text6">
+                                    6
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    подарков
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div_row></div_row>
+                <div style="background-color: white; padding: 10px;">
+                    <div style="display: flex; justify-content: space-between; padding: 5px;">
+                        <div style="display: flex;">
+                            <div>
+                                <span class="color2 text3">Мои фотографии &nbsp;</span>
+                            </div>
+                            <div>
+                                <span class="color3 text4">97</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="color3 text4">Показать на карте</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: stretch; background-color: white; padding: 5px 0;">
+                        <div style="padding: 5px;">
+                            <img src="Pic1.png" width="100%">
+                        </div>
+                        <div style="padding: 5px;">
+                            <img src="Pic1.png" width="100%">
+                        </div>
+                        <div style="padding: 5px;">
+                            <img src="Pic1.png" width="100%">
+                        </div>
+                        <div style="padding: 5px;">
+                            <img src="Pic1.png" width="100%">
+                        </div>
+                    </div>
+                </div>
+                <div_row></div_row>
+                <div style="background-color: white; padding: 10px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="display: flex;">
+                            <img src="Pic1.png" style="border-radius:50%; width:6%;">
+                            <div>
+                                <span class="color3 text4">&nbsp; Что у вас нового?</span>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <div_row></div_row>
+                <div style="background-color: white; padding: 10px;">
+                    <div style="display:flex; flex-direction: column; background-color: white; padding: 5px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="display: flex;">
+                                <div>
+                                    <span class="color2 text4">Все записи &nbsp;&nbsp;</span>
+                                </div>
+                                <div>
+                                    <span class="color3 text4">Мои записи &nbsp;&nbsp;</span>
+                                </div>
+                                <div>
+                                    <span class="color3 text4">Архив записей &nbsp;&nbsp;</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span>&#128269;</span>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <hr>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </main_center_right>
+        </main_center>
+        <main_box>
+            <header4></header4>
+            <div_row></div_row>
+        </main_box>
     </main>
 </body>
 </html>

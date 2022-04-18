@@ -7,7 +7,7 @@
     <style>
         *{
             box-sizing: border-box;
-            <!-- border:1px black solid; временно -->
+            <!-- border:1px black solid; временно для проверки -->
         }
 
         html, body {
@@ -66,6 +66,13 @@
                         background-color: white;
                     }
 
+                    profile {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 5px;
+                        width: 33%;
+                    }
+
                 main_center_right {
                         display:flex;
                         flex-direction: column;
@@ -80,6 +87,12 @@
                         justify-content: flex-end;
                         align-items: center;
                         background-color: white;
+                    }
+
+                    statistic {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
                     }
 
             main_box {
@@ -106,6 +119,20 @@
         .text6 {font:14px Verdana;}
 
         .border1 {border-style: none; border-radius: 5px;}
+        .circle {border-radius:50%;}
+
+        .align_center {text-align: center;}
+
+        .margin_left {margin: 0 0 0 auto;}
+        .margin_center {margin: auto 0;}
+        .margin_side10 {margin: 0 10px;}
+        .margin_side5 {margin: 0 5px;}
+        .margin_top5 {margin: 5px 0;}
+
+        .padding_top_bottom {padding: 10px 0;}
+        .padding_box10 {padding: 10px;}
+        .padding_box5 {padding: 5px;}
+        .padding_3px {padding: 3px;}
 
         .truncate {
             white-space: nowrap; /* Текст не переносится */
@@ -131,8 +158,8 @@
         <main_left>
             <header1>
                 <header4></header4>
-                <img src="logo.png" style="width:20%;">
-                <div style="margin:auto 0;">
+                <img src="logo.png" width="20%">
+                <div class="margin_center">
                     <span class="text1 color2">вконтакте</span>
                 </div>
             </header1>
@@ -171,46 +198,49 @@
             <main_center_left>
                 <header2>
                     <header4></header4>
-                    <input type="text" placeholder="&#128269; Поиск" style="background-color: lightgray; border-radius:5px; border-style: none; padding: 3px;">
+                    <input class="color4 border1 padding_3px" type="text" placeholder="&#128269; Поиск">
                 </header2>
                 <div_row></div_row>
-                <div style="background-color: white; padding: 10px; margin: 0 10px;">
+                <div class="color3 padding_box10 margin_side10">
                     <div>
                         <img src="Pic1.png" width="100%">
                     </div>
-                    <div style="padding: 10px 0;">
+                    <div class="padding_top_bottom">
                         <button class="color4 text3 border1" style="padding: 5px 0; width: 100%;">Редактировать</button>
                     </div>
-                    <div style="padding: 10px 0;">
-                            <span class="color3 text3">
-                                Статистика страницы
-                            </span>
+                    <div class="padding_top_bottom">
+                        <span class="color3 text3">
+                            &nbsp; <i class="fa-solid fa-chart-line"></i>
+                            &nbsp; Статистика страницы
+                        </span>
                     </div>
-                    <div style="padding: 10px 0;">
-                            <span class="color3 text3">
-                                Воспоминания
-                            </span>
+                    <div class="padding_top_bottom">
+                        <span class="color3 text3">
+                            &nbsp; <i class="fa-solid fa-repeat"></i>
+                            &nbsp; Воспоминания
+                        </span>
                     </div>
-                    <div style="padding: 10px 0;">
-                            <span class="color3 text3">
-                                Денежные переводы
-                            </span>
+                    <div class="padding_top_bottom">
+                        <span class="color3 text3">
+                            &nbsp; <i class="fa-solid fa-money-bill-transfer"></i>
+                            &nbsp; Денежные переводы
+                        </span>
                     </div>
                 </div>
-                <div style="display:flex; background-color: white; padding: 10px;  margin:10px;">
+                <div class="padding_box10" style="display:flex; background-color: white; margin:10px;">
                     <img src="contact.png" width="10%">
                     <div>
                         <span class="text2 color2">
                             &nbsp; Укажите ваши контакты
                         </span>
                     </div>
-                    <div style="margin: 0 0 0 auto;">
+                    <div class="margin_left">
                         <span class="text2 color3">
                             &#215;
                         </span>
                     </div>
                 </div>
-                <div style="background-color: white; padding: 5px;  margin: 0 10px;">
+                <div class="color2 padding_box5 margin_side10">
                     <div style="display: flex;">
                         <span class="color2 text4">
                             Друзья &nbsp;
@@ -218,67 +248,67 @@
                         <span class="color3 text4">
                                 1484
                         </span>
-                        <div style="margin: 0 0 0 auto">
+                        <div class="margin_left">
                             <span class="color3 text4">
                                 Обновления
                             </span>
                         </div>
                     </div>
-                    <div style="display: flex; flex-wrap:wrap; padding: 0;">
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                    <div class="margin_top5" style="display: flex; flex-wrap:wrap;">
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Дамир
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Кайрат
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Андрей
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Айнур
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Бексултан
                                     </span>
                             </div>
-                        </div>
+                        </profile>
                     </div>
                 </div>
                 <div style="background-color: white; padding: 5px;  margin: 2px 10px 0 10px;">
-                    <div style="display: flex;">
+                    <div class="margin_top5" style="display: flex;">
                             <span class="color2 text4">
                                 Друзья онлайн &nbsp;
                             </span>
@@ -287,36 +317,36 @@
                             </span>
                     </div>
                     <div style="display: flex; flex-wrap:wrap;">
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div style="text-align: center;">
+                            <div class="align_center">
                                     <span class="color3 text4">
                                         Бытырбек
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div class="truncate" style="text-align: center;">
+                            <div class="truncate align_center">
                                     <span class="color3 text4">
                                         Шермухан
                                     </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; padding: 5px; width: 33%;">
-                            <div style="text-align: center;">
-                                <img src="Pic1.png" style="border-radius:50%; width:100%">
+                        </profile>
+                        <profile>
+                            <div class="align_center">
+                                <img class="circle" src="Pic1.png" width="100%">
                             </div>
-                            <div class="truncate" style="text-align: center;">
+                            <div class="truncate align_center">
                                     <span class="color3 text4">
                                         Мухамедалин
                                     </span>
                             </div>
-                        </div>
+                        </profile>
                     </div>
                 </div>
             </main_center_left>
@@ -326,13 +356,13 @@
                     <div>
                         <span class="text2 color2">Ilyas &nbsp;</span>
                     </div>
-                    <img src="Pic1.png" style="border-radius:50%; width:4%; margin: 0 5px">
+                    <img class="circle margin_side5" src="Pic1.png" width="4%">
                     <div>
                         <span class="text2 color3">&nbsp; &#709; &nbsp;</span>
                     </div>
                 </header3>
                 <div_row></div_row>
-                <div style="background-color: white; padding: 10px;">
+                <div class="color2 padding_box10">
                     <div style="display: flex; justify-content: space-between; padding: 5px;">
                         <div style="display: flex;">
                             <div>
@@ -372,7 +402,7 @@
                     <hr>
                     <br>
                     <div style="display: flex; flex-direction: row; justify-content: space-around;">
-                        <div style="display: flex; flex-direction: column; text-align: center;">
+                        <statistic>
                             <div>
                                 <span class="color1 text6">
                                     1 484
@@ -383,8 +413,8 @@
                                     друга
                                 </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; text-align: center;">
+                        </statistic>
+                        <statistic>
                             <div>
                                 <span class="color1 text6">
                                     271
@@ -395,8 +425,8 @@
                                     подписчик
                                 </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; text-align: center;">
+                        </statistic>
+                        <statistic>
                             <div>
                                 <span class="color1 text6">
                                     97
@@ -407,8 +437,8 @@
                                     фотогорафий
                                 </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; text-align: center;">
+                        </statistic>
+                        <statistic>
                             <div>
                                 <span class="color1 text6">
                                     1 380
@@ -419,8 +449,8 @@
                                     видеозаписей
                                 </span>
                             </div>
-                        </div>
-                        <div style="display: flex; flex-direction: column; text-align: center;">
+                        </statistic>
+                        <statistic>
                             <div>
                                 <span class="color1 text6">
                                     6
@@ -431,12 +461,12 @@
                                     подарков
                                 </span>
                             </div>
-                        </div>
+                        </statistic>
                     </div>
                     <br>
                 </div>
                 <div_row></div_row>
-                <div style="background-color: white; padding: 10px;">
+                <div class="padding_box10" style="background-color: white;">
                     <div style="display: flex; justify-content: space-between; padding: 5px;">
                         <div style="display: flex;">
                             <div>
@@ -466,10 +496,10 @@
                     </div>
                 </div>
                 <div_row></div_row>
-                <div style="background-color: white; padding: 10px;">
+                <div class="padding_box10" style="background-color: white;">
                     <div style="display: flex; justify-content: space-between;">
                         <div style="display: flex;">
-                            <img src="Pic1.png" style="border-radius:50%; width:6%;">
+                            <img class="circle" src="Pic1.png" width="6%">
                             <div>
                                 <span class="color3 text4">&nbsp; Что у вас нового?</span>
                             </div>
@@ -480,13 +510,13 @@
                                <i class="fa-solid fa-music"></i> &nbsp;
                                <i class="fa-solid fa-splotch"></i> &nbsp;
                                <i class="fa-solid fa-voicemail"></i> &nbsp;
-                                <i class="fa-solid fa-tarp"></i>  &nbsp;
+                               <i class="fa-solid fa-tarp"></i>  &nbsp;
                             </span>
                         </div>
                     </div>
                 </div>
                 <div_row></div_row>
-                <div style="background-color: white; padding: 10px;">
+                <div class="padding_box10" style="background-color: white;">
                     <div style="display:flex; flex-direction: column; background-color: white; padding: 5px;">
                         <div style="display: flex; justify-content: space-between;">
                             <div style="display: flex;">
@@ -504,7 +534,7 @@
                                 <span>&#128269;</span>
                             </div>
                         </div>
-                        <div style="min-height: 104px;">
+                        <div style="min-height: 124px;">
                             <br>
                             <hr>
                             <br>

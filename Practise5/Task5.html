@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Insert n:"));
+        let k = parseInt(prompt("Insert k:"));
+
+        function div(val, by){
+            return (val - val % by) / by;
+        }
+
+        alert (`Output: ${div(k, n)}`);
+    </script>
+</body>
+</html>

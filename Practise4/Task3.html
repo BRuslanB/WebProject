@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            border:1px black solid; <!-- временно для проверки -->
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: raleway, sans-serif;
+            font-size: 14px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        frame_one {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: #f8fbfe;
+        }
+
+        frame_even {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        .color1 {color: #124265;}
+        .color2 {color: #444444;}
+        .color3 {color: white;}
+        .color4 {color: #5e5e5e;}
+        .color5 {color: #1e6ca6;}
+
+        .background1 {background-color: #f8fbfe;}
+        .background2 {background-color: #2487ce;}
+        .background3 {background-color: #fff;}
+
+        .text1 {font:bold 20px sans-serif;}
+        .text2 {font:bold 16px sans-serif;}
+        .text3 {font:12px sans-serif;}
+        .text4 {font:10px Arial;}
+        .text6 {font:14px Verdana;}
+
+        .border1 {border-style: none; border-radius: 5px;}
+
+        .align_center {text-align: center;}
+
+        .margin_left {margin: 0 0 0 auto;}
+        .margin_center {margin: auto 0;}
+        .margin_side10 {margin: 0 10px;}
+        .margin_side5 {margin: 0 5px;}
+        .margin_top5 {margin: 5px 0;}
+
+        .padding_top_bottom {padding: 10px 0;}
+        .padding_box10 {padding: 10px;}
+        .padding_box5 {padding: 5px;}
+        .padding_side {padding: 5px 15px;}
+
+    </style>
+</head>
+<body>
+    <main>
+        <frame_one>
+            <div class="padding_box10">
+                <span class="text1 color1">BITLAB SHOP</span>
+            </div>
+            <div class="padding_box10">
+                <span class="text2 color1">&nbsp; Home &nbsp;</span>
+                <span class="text2 color1">&nbsp; About Us &nbsp;</span>
+                <span class="text2 color1">&nbsp; Products &nbsp;</span>
+                <span class="text2 color1">&nbsp; Services &nbsp;</span>
+            </div>
+            <div class="padding_box10">
+                <input type="text" placeholder="Search">
+                <button class="text3 background2 color3 border1 padding_side">
+                    Go
+                </button>
+            </div>
+        </frame_one>
+    </main>
+</body>
+</html>

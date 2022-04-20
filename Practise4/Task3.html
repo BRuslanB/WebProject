@@ -6,7 +6,7 @@
     <style>
         *{
             box-sizing: border-box;
-            border:1px black solid; <!-- временно для проверки -->
+        <!-- border:1px black solid; временно для проверки -->
         }
 
         html, body {
@@ -22,19 +22,31 @@
         main {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
-        frame_one {
+        frame_odd {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             background-color: #f8fbfe;
+            width: 80%;
         }
 
         frame_even {
             display: flex;
             flex-direction: column;
+            align-items: center;
             background-color: #fff;
+            width: 80%;
+        }
+
+        frame_team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f8fbfe;
+            width: 80%;
         }
 
         .color1 {color: #124265;}
@@ -47,18 +59,24 @@
         .background2 {background-color: #2487ce;}
         .background3 {background-color: #fff;}
 
+        .text0 {font:bold 32px sans-serif;}
+        .text10 {font:bold 24px sans-serif;}
         .text1 {font:bold 20px sans-serif;}
         .text2 {font:bold 16px sans-serif;}
-        .text3 {font:12px sans-serif;}
-        .text4 {font:10px Arial;}
-        .text6 {font:14px Verdana;}
+        .text3 {font:bold 14px sans-serif;}
+        .text4 {font:12px sans-serif;}
+        .text5 {font:10px sans-serif;}
+        .text6 {font:8px sans-serif;}
 
         .border1 {border-style: none; border-radius: 5px;}
+        .border2 {border-style: none; border-top-right-radius: 5px; border-top-left-radius: 5px;}
 
         .align_center {text-align: center;}
 
         .margin_left {margin: 0 0 0 auto;}
         .margin_center {margin: auto 0;}
+        .margin_side50 {margin: 0 50px;}
+        .margin_side40 {margin: 0 40px;}
         .margin_side10 {margin: 0 10px;}
         .margin_side5 {margin: 0 5px;}
         .margin_top5 {margin: 5px 0;}
@@ -66,13 +84,14 @@
         .padding_top_bottom {padding: 10px 0;}
         .padding_box10 {padding: 10px;}
         .padding_box5 {padding: 5px;}
-        .padding_side {padding: 5px 15px;}
+        .padding_side5 {padding: 5px 15px;}
+        .padding_side10 {padding: 10px 20px;}
 
     </style>
 </head>
 <body>
     <main>
-        <frame_one>
+        <frame_odd>
             <div class="padding_box10">
                 <span class="text1 color1">BITLAB SHOP</span>
             </div>
@@ -84,11 +103,186 @@
             </div>
             <div class="padding_box10">
                 <input type="text" placeholder="Search">
-                <button class="text3 background2 color3 border1 padding_side">
+                <button class="text4 background2 color3 border1 padding_side5">
                     Go
                 </button>
             </div>
-        </frame_one>
+        </frame_odd>
+        <frame_even>
+            <div>
+                <span class="text0 color1">
+                    The best e-shop in our Country!
+                </span>
+            </div>
+            <div>
+                <span class="text2 color4">
+                    BITLAB SHOP Market was founded on 2015, by a team of programmers and sellers!
+                </span>
+            </div>
+            <div>
+                <button class="text4 background2 color3 border1 padding_side10">
+                    Know more
+                </button>
+            </div>
+        </frame_even>
+        <frame_odd>
+            <div>
+                <div class="align_center">
+                    <span class="text0 color1">
+                        67
+                    </span>
+                </div>
+                <div class="align_center">
+                    <span class="text3 color5">
+                        Happy clients
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div class="align_center">
+                    <span class="text0 color1">
+                        69
+                    </span>
+                </div>
+                <div class="align_center">
+                    <span class="text3 color5">
+                        Projects
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div class="align_center">
+                    <span class="text0 color1">
+                        7
+                    </span>
+                </div>
+                <div class="align_center">
+                    <span class="text3 color5">
+                        Years of experience
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div class="align_center">
+                    <span class="text0 color1">
+                        31
+                    </span>
+                </div>
+                <div class="align_center">
+                    <span class="text3 color5">
+                        Developers
+                    </span>
+                </div>
+            </div>
+        </frame_odd>
+        <frame_even>
+            <div>
+                <span class="text10 color1">
+                    GALLERY
+                </span>
+            </div>
+            <div style="display: flex; justify-content:center;">
+                <img class="margin_side50" src="1.png" width="30%">
+                <img class="margin_side50" src="2.png" width="30%">
+            </div>
+            <div style="display: flex; justify-content:center;">
+                <img class="margin_side50" src="3.png" width="30%">
+                <img class="margin_side50" src="4.png" width="30%">
+            </div>
+            <div style="display: flex; justify-content:center;">
+                <img class="margin_side50" src="5.png" width="30%">
+                <img class="margin_side50" src="6.png" width="30%">
+            </div>
+        </frame_even>
+        <frame_team>
+            <div>
+                <span class="text10 color1">
+                    TEAM
+                </span>
+            </div>
+            <div class="align_center">
+                <span class="text2 color4">
+                    Our team is one of the most friendly teams in the world.
+                    They are professionals on their job.
+                    Most of them knows at least 3 languages.
+                    Certified sellers, market analytics, business developers and best projects managers are included in our teams.
+                </span>
+            </div>
+            <div style="display: flex; justify-content:space-between; width: 80%;">
+                <div class="align_center" style="width: 24%">
+                    <div>
+                        <img class="border2" src="team-1.jpg" width="100%">
+                    </div>
+                    <div style="margin-top: 20px">
+                        <span class="text2">
+                            Zhuanyshev Ilyas
+                        </span>
+                    </div>
+                    <div style="margin-bottom: 20px">
+                        <span class="text2 color4">
+                            Chief Executive Officer
+                        </span>
+                    </div>
+                </div>
+                <div class="align_center" style="width: 24%">
+                    <div>
+                        <img class="border2" src="team-2.jpg" width="100%">
+                    </div>
+                    <div style="margin-top: 20px">
+                        <span class="text2">
+                            Anel
+                        </span>
+                    </div>
+                    <div style="margin-bottom: 20px">
+                        <span class="text2 color4">
+                            Sales Manager
+                        </span>
+                    </div>
+                </div>
+                <div class="align_center text2" style="width: 24%">
+                    <div>
+                        <img class="border2" src="team-3.jpg" width="100%">
+                    </div>
+                    <div style="margin-top: 20px">
+                        <span class="text2">
+                            Aibek Bagit
+                        </span>
+                    </div>
+                    <div style="margin-bottom: 20px">
+                        <span class="text2 color4">
+                            CTO
+                        </span>
+                    </div>
+                </div>
+                <div class="align_center" style="width: 24%">
+                    <div>
+                        <img class="border2" src="team-4.jpg" width="100%">
+                    </div>
+                    <div style="margin-top: 20px">
+                        <span class="text2">
+                            Aruzhan
+                        </span>
+                    </div>
+                    <div style="margin-bottom: 20px">
+                        <span class="text2 color4">
+                            Project Manager
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </frame_team>
+        <frame_even>
+            <div>
+                <span class="color4">
+                    &copy; Copyright <b>BitLab</b>. All right reserved 2017
+                </span>
+            </div>
+            <div>
+                <span class="color4">
+                    Designed by <a href="#">Bitlab Team</a>
+                </span>
+            </div>
+        </frame_even>
     </main>
 </body>
 </html>

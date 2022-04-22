@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Insert year:"));
+        if (n % 4 === 0 && n % 100 !== 0 || n % 400 === 0 && n >= 0 && n <= 30000)
+            console.log("YES");
+        else
+            console.log("NO");
+    </script>
+</body>
+</html>

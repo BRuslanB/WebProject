@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt("Choose your branch:\n" +
+                                "1 - Science, 2 - Humanitarian subjects, 3 - Art, 4 - Sport:"));
+        let n2;
+        switch (n1) {
+            case 1:
+                n2 = parseInt(prompt("Branch Science, choose your subbranch:\n" +
+                                    "1 - Math, 2 - Physics"));
+                switch (n2) {
+                    case 1:
+                        alert("You are Financier");
+                        break;
+                    case 2:
+                        alert("You are Engineer");
+                        break;
+                    default:
+                        alert("Selection subbranch error");
+                        break;
+                }
+                break;
+            case 2:
+                n2 = parseInt(prompt("Branch Humanitarian subjects, choose your subbranch:\n" +
+                                    "1 - History, 2 - Foreign Languages"));
+                switch (n2) {
+                    case 1:
+                        alert("You are Historic or Diplomat");
+                        break;
+                    case 2:
+                        alert("You are Translator");
+                        break;
+                    default:
+                        alert("Selection subbranch error");
+                        break;
+                }
+                break;
+            case 3:
+                n2 = parseInt(prompt("Branch Art, choose your subbranch:\n" +
+                                    "1 - Drawing, 2 -Singing"));
+                switch (n2) {
+                    case 1:
+                        alert("You are Painter or Architect");
+                        break;
+                    case 2:
+                        alert("You are Singer or Tamada");
+                        break;
+                    default:
+                        alert("Selection subbranch error");
+                        break;
+                }
+                break;
+            case 4:
+                n2 = parseInt(prompt("Branch Sport, choose your subbranch:\n" +
+                                    "1 - Team, 2 - Individual"));
+                switch (n2) {
+                    case 1:
+                        alert("You are footballer or Basketball player");
+                        break;
+                    case 2:
+                        alert("You are boxer or tennis player");
+                        break;
+                    default:
+                        alert("Selection subbranch error");
+                        break;
+                }
+                break;
+            default:
+                alert("Selection branch error");
+                break;
+        }
+    </script>
+</body>
+</html>

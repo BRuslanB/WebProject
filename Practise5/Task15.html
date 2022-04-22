@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const u = 380;
+        let s = parseInt(prompt("INSERT YOUR COUNT MONEY IN KZT:"));
+        if (s % u === 0)
+            alert(`ONLY ${s / u } USD`);
+        else
+            alert(`${Math.trunc(s / u)} USD and ${Math.trunc((s / u) * 100 - Math.trunc(s / u) * 100)} cents`);
+    </script>
+</body>
+</html>

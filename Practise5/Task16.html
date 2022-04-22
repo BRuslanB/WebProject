@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let min = parseInt(prompt("Insert count minutes:"));
+        let d =  Math.trunc(min / (60 * 24));
+        let h = Math.trunc(min / 60) - d * 24;
+        let m = min % 60;
+        if (d > 0) {
+            alert(`${d} DAYS ${h} HOURS and ${m} MINUTES`);
+        } else if (h > 0) {
+            alert(`${h} HOURS and ${m} MINUTES`);
+        } else {
+            alert(`${m} MINUTES`);
+        }
+    </script>
+</body>
+</html>

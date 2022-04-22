@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const u = 380;
+        const e = 430;
+        const g = 480;
+        let sum;
+        let s = parseInt(prompt("INSERT YOUR AMOUNT IN KZT:"));
+        let c = parseInt(prompt('Insert choose curency:\n ' +
+                                '1- CONVERT TO USD\n ' +
+                                '2- CONVERT TO EUR\n ' +
+                                '3- CONVERT TO GBP'));
+        switch (c) {
+            case 1:
+                sum = s / u;
+                console.log(s + " KZT = " + sum.toFixed(2) + " USD");
+                break;
+            case 2:
+                sum = s / e;
+                console.log(s + " KZT = " + sum.toFixed(2) + " EUR");
+                break;
+            case 3:
+                sum = s / g;
+                console.log(s + " KZT = " + sum.toFixed(2) + " GBR");
+                break;
+        }
+    </script>
+</body>
+</html>

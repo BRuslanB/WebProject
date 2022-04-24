@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Insert n"));
+        let mas = [];
+        let m;
+        for (let i = 0; i < n; i++) {
+            let m = parseInt(prompt("Insert mas[" + i + "]"));
+            mas.push(m);
+        }
+        m = mas[0];
+        for (let i = 1; i < n; i++) {
+            if (m < mas[i])
+                m = mas[i];
+        }
+        alert("max = " + m);
+    </script>
+</body>
+</html>

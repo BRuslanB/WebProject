@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        books = [
+            {"name":"Harry Potter and the Philosopher's Stone", "author": "Joanne Rowling", "ISBN": "1233123", "price": 50},
+            {"name":"Harry Potter and the Chamber of Secrets", "author": "Joanne Rowling", "ISBN": "2343543", "price": 60},
+            {"name":"Harry Potter and the Prisoner of Azkaban", "author": "Joanne Rowling", "ISBN": "3455432", "price": 45},
+            {"name":"Путь Абая", "author": "Мухтар Ауэзов", "ISBN": "6463224", "price": 30},
+            {"name":"Война и мир", "author": "Лев Толстой", "ISBN": "4353454", "price": 55},
+            {"name":"Анна Каренина", "author": "Лев Толстой", "ISBN": "75673543", "price": 40},
+        ];
+        let text = "";
+        let s = prompt("Insert book name:");
+        for (let i = 0; i < books.length; i++) {
+            if (s === books[i]["author"]) {
+                text += books[i]["name"] + " - " + books[i]["author"] + " - " + books[i]["ISBN"] + " - " + books[i]["price"] + "\n";
+            }
+        }
+        if (text === "")
+            text = "Book not found";
+        alert(text);
+    </script>
+</body>
+</html>

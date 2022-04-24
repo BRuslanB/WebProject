@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let users = []; //создаем массив
+        let activeUser = {}; //создаем новый объект для активного пользователя
+        //activeUser = null;
+        activeUser.id = 0; //по умолчанию нет активного пользователя
+        let login;
+        let userExist;
+        let menuExit = false;
+        let countUser = 0;
+        do { //цикл для меню
+            let n = prompt( "Выбери 1 - чтобы зарегистрироваться\n" +
+                            "Выбери 2 - чтобы войти\n" +
+                            "Выбери 3 - чтобы увидеть вошедшего пользователя\n" +
+                            "Выбери 4 - чтобы поменять свой пароль\n" +
+                            "Выбери 5 - чтобы выйти из аккаунта\n" +
+                            "Выбери 6 - чтобы выйти из меню");
+            switch (n) {
+                case '1':
+                    let name = prompt('Введите Имя:');
+                    login = prompt('Введите Логин:');
+                    //проверяем есть ли пользователь с такими данными
+                    userExist = false;
+                    for (let u of users) {
+                        if (u.login === login) {
+                            userExist = true;
+                            alert('В регистрации отказано! \n' +
+                                  'Пользователь с Логином ' + u.login + 'уже существует.');
+                            break;
+                        }
+                    }
+                    if (!userExist) {
+                        let password1 = prompt('Введите Пароль:');
+                        let password2 = prompt('Введите Пароль еще раз:');
+                        if (password1 === password2) {
+                            let newUser = {}; //создаем новый объект для добавления пользователя
+                            newUser.id = countUser + 1; //присваеваем объекту id
+                            newUser.name = name; //присваеваем объекту имя
+                            newUser.login = login;
+                            newUser.password = password1;
+                            users.push(newUser); //добавляем объект в конец массива
+                            countUser++;
+                        } else {
+                            alert('Повторите попытку! \n' +
+                                  'Введенные Пароли не совпадают.');
+                        }
+                    }
+                    break;
+                case '2':
+                    login = prompt('Введите Логин:');
+                    let password = prompt('Введите Пароль:');
+                    //проверяем есть ли пользователь с такими данными
+                    userExist = false;
+                    for (let i = 0; i < countUser; i++) {
+                        if (users[i].login === login && users[i].password === password) {
+                            userExist = true;
+                            //запоминаем авторизированного пользователя
+                            activeUser.id = users[i].id;
+                            activeUser.name = users[i].name;
+                            activeUser.login = users[i].login;
+                            activeUser.password = users[i].password;
+                            alert('Пользователь с Именем "' + activeUser.name + '" и  Логином "' + activeUser.login + '" успешно вошел в аккаунт');
+                            break;
+                        }
+                    }
+                    if (!userExist)
+                        alert('Повторите попытку! \n' +
+                              'Пользователь с указанным Логином и Паролем не зарегистрирован.');
+                    break;
+                case '3':
+                    if (activeUser !== null && activeUser.id !== 0)
+                        alert('Авторизирован пользователь с Именем "' + activeUser.name + '" и  Логином "' + activeUser.login + '"');
+                    else
+                        alert('Повторите попытку! \n' +
+                              'Нет авторизированого пользователя.');
+                    break;
+                case '4':
+                    if (activeUser !== null && activeUser.id !== 0) {
+                        let password = prompt('Введите Текущий Пароль:');
+                        if (password === activeUser.password) {
+                            let password1 = prompt('Введите Новый Пароль:');
+                            let password2 = prompt('Введите Новый Пароль еще раз:');
+                            if (password1 === password2) {
+                                //сохраняем новый пароль
+                                activeUser.password = password1;
+                                users[activeUser.id - 1].password = password1;
+                            } else
+                                alert('Повторите попытку! \n' +
+                                      'Введенные Пароли не совпадают.');
+                        }
+                        else
+                            alert('Повторите попытку! \n' +
+                                  'Текущий Пароль неправильный.');
+                    } else
+                        alert('Повторите попытку! \n' +
+                            'Нет авторизированого пользователя.');
+                    break;
+                case '5':
+                    if (activeUser !== null && activeUser.id !== 0) {
+                        alert('Пользователь с Именем "' + activeUser.name + '" и  Логином "' + activeUser.login + '" вышел из акаунта');
+                        activeUser.id = 0;
+                        activeUser.name = "";
+                        activeUser.login = "";
+                        activeUser.password = "";
+                    } else
+                        alert('Повторите попытку! \n' +
+                            'Нет авторизированого пользователя.');
+                    break;
+                case '6':
+                    menuExit = true;
+                    break;
+                default:
+                    alert("Неверный выбор");
+                    break;
+            }
+        } while (!menuExit);
+    </script>
+</body>
+</html>

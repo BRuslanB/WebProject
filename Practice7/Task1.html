@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      let mas = [];
+      let n = parseInt(prompt("Insert n:"));
+      for (let i = 0; i < n; i++){
+          let m = parseInt(prompt("Insert mas[" + i + "]"));
+          mas.push(m);
+      }
+      let m = parseInt(prompt("Insert m:"));
+      n = mas.indexOf(m);
+      if (n !== -1)
+        alert("Yes " + n);
+      else
+        alert("No");
+  </script>
+</body>
+</html>

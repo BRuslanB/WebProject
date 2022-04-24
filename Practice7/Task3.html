@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let mas = [];
+        let s = "";
+        do {
+            n = parseInt(prompt("Insert number:"));
+            if (n !== 0) {
+                mas.push(n);
+                if (n > 0)
+                    s += n + " ";
+            } else
+                break;
+        } while (true);
+        if (s !== "")
+            alert(s);
+        else
+            alert("No output data");
+    </script>
+</body>
+</html>

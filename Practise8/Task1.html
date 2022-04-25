@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            <!-- border:1px black solid; временно для проверки -->
+        }
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex; width: 25%;">
+        <div style="text-align: left; width: 40%;">
+            <span>
+                LOGIN:
+            </span>
+        </div>
+        <div style="text-align: right; width: 60%;">
+            <input type="text" style="font-style: italic; width: 100%;">
+        </div>
+    </div>
+    <p/>
+    <div style="display: flex; width: 25%;">
+        <div style="text-align: left; width: 40%;">
+            <span>
+                PASSWORD:
+            </span>
+        </div>
+        <div style="text-align: right; width: 60%;">
+            <input type="password" style="width: 100%;">
+        </div>
+    </div>
+    </p>
+    <div style="text-align: right; width: 25%;">
+        <button style="background-color: royalblue; color: whitesmoke; font-weight: bold; padding: 0 15px;">SIGN IN</button>
+    </div>
+    <script>
+        let users = [
+            {id: 1, login: "admin", password: "admin1"},
+            {id: 1, login: "user", password: "user1"},
+            {id: 1, login: "ilyas", password: "ilyas1"},
+            {id: 1, login: "smith", password: "smith1"},
+            {id: 1, login: "test", password: "test1"}
+        ];
+
+    </script>
+</body>
+</html>

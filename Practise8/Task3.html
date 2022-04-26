@@ -2,9 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Практическое задание 3</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            <!-- border:1px black solid; временно для проверки -->
+        }
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-
+<div style="display: flex; width: 25%;">
+    <div style="text-align: left; width: 40%;">
+            <span>
+                CARD:
+            </span>
+    </div>
+    <div style="display: flex; justify-content: space-between; width: 60%;">
+        <input id="card1" type="text" maxLength="4" style="font-style: italic; width: 20%;">
+        <input id="card2" type="text" maxLength="4" style="font-style: italic; width: 20%;">
+        <input id="card3" type="text" maxLength="4" style="font-style: italic; width: 20%;">
+        <input id="card4" type="text" maxLength="4" style="font-style: italic; width: 20%;">
+    </div>
+</div>
+<p/>
+<div style="display: flex; width: 25%;">
+    <div style="text-align: left; width: 40%;">
+            <span>
+                NAME SURNAME:
+            </span>
+    </div>
+    <div style="text-align: right; width: 60%;">
+        <input id="name" type="text" style="width: 100%;">
+    </div>
+</div>
+<p/>
+<div style="display: flex; width: 25%;">
+    <div style="text-align: left; width: 40%;">
+            <span>
+                CVV:
+            </span>
+    </div>
+    <div style="text-align: right; width: 60%;">
+        <input id="cvv" type="password" maxLength="3" style="width: 100%;">
+    </div>
+</div>
+</p>
+<div style="text-align: left; width: 25%;">
+    <button id="butt_complete" style="background-color: royalblue; color: whitesmoke; font-weight: bold; padding: 0 15px;">COMPLETE</button>
+</div>
+<script>
+        let cards = [
+            {"card1": 4413, "card2": 4413, "card3": 4413, "card4": 4413, "name": "ILYAS ZHUANYSHEV", "cvv": 123},
+            {"card1": 1111, "card2": 2222, "card3": 3333, "card4": 4444, "name": "RUSLAN BAIDYUSSENOV", "cvv": 111},
+            {"card1": 5555, "card2": 6666, "card3": 7777, "card4": 8888, "name": "IVAN IVANOV", "cvv": 555},
+            {"card1": 9999, "card2": 0000, "card3": 1111, "card4": 2222, "name": "AKHMET AKHMETOV", "cvv": 999}
+        ];
+        function func_complete() {
+            let foundCard = false;
+            for (let i = 0; i < cards.length; i++)
+                if (card1.value == cards[i]["card1"] && card2.value == cards[i]["card2"] &&
+                    card3.value == cards[i]["card3"] && card4.value == cards[i]["card4"] &&
+                    cvv.value == cards[i]["cvv"]) {
+                    document.body.innerHTML = '<h1>Transaction completed</h1>'; // заменяем содержимое body
+                    foundCard = true;
+                    break;
+                }
+            if (!foundCard) {
+                alert("Invalid Data");
+                // очищаем элементы ввода и закрашиваем рамку
+                let inputs = document.getElementsByTagName('input');
+                for (let input of inputs)
+                    input.value = '';
+            }
+        }
+        butt_complete.addEventListener('click', func_complete);
+    </script>
 </body>
 </html>

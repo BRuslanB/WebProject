@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Практическое задание 2</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <div style="display: flex; width: 25%;">
+        <div>
+            <button id="button_add" style="background-color: royalblue; color: white; padding: 2px 35px;">+</button>
+        </div>
+        <div style="color: royalblue; font-weight: bold; text-align: center; width: 25%;">
+            <span id="number_val">0</span>
+        </div>
+        <div>
+            <button id="button_minus" style="background-color: royalblue; color: white; padding: 2px 35px;">-</button>
+        </div>
+    </div>
+    <script>
+        function add_val() {
+            var current_val = parseInt(number_val.innerHTML) + 1;
+            number_val.innerHTML = current_val;
+        }
+        button_add.addEventListener('click', add_val);
 
+        function delete_val() {
+            var current_val = parseInt(number_val.innerHTML) - 1;
+            if (current_val < 0)
+                current_val = 0;
+            number_val.innerHTML = current_val;
+        }
+        button_minus.addEventListener('click', delete_val);
+    </script>
 </body>
 </html>

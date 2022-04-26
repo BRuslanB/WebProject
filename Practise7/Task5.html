@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let cars = [
+            {"name":"Toyota", "price": 12000000, "year": 2015, "volume": 2.2},
+            {"name":"Mercedes", "price": 70000000, "year": 2018, "volume": 3.8},
+            {"name":"Toyota", "price": 7000000, "year": 2013, "volume": 2.0},
+            {"name":"BMW", "price": 11000000, "year": 2011, "volume": 3.0},
+            {"name":"Lexus", "price": 60000000, "year": 2017 ,"volume": 5.7}
+        ];
+        let menuExit = false;
+        do { //цикл для меню
+            let n = prompt( "INSERT [1] TO SEARCH BY NAME\n" +
+                            "INSERT [2] TO SEARCH BY YEAR\n" +
+                            "INSERT [3] TO SEARCH BY ENGINE VOLUME\n" +
+                            "INSERT [4] TO SEARCH BY PRICE\n" +
+                            "INSERT [5] TO EXIT");
+            let s = "";
+            let m1, m2;
+            switch (n) {
+                case '1':
+                    m1 = prompt("INSERT NAME OF CAR:");
+                    for (let i = 0; i < cars.length; i++)
+                        if (m1 == cars[i]["name"])
+                            s += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + "\n";
+                    if (s !== "")
+                        alert(s);
+                    else
+                        alert("Not found");
+                    break;
+                case '2':
+                    m1 = parseInt(prompt("INSERT YEAR START FROM:"));
+                    m2 = parseInt(prompt("INSERT YEAR ENDS FROM:"));
+                    for (let i = 0; i < cars.length; i++)
+                        if (m1 <= cars[i]["year"] && m2 >= cars[i]["year"])
+                            s += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + "\n";
+                    if (s !== "")
+                        alert(s);
+                    else
+                        alert("Not found");
+                    break;
+                case '3':
+                    m1 = parseFloat(prompt("INSERT ENGINE VOLUME START FROM:"));
+                    m2 = parseFloat(prompt("INSERT ENGINE VOLUME ENDS FROM:"));
+                    for (let i = 0; i < cars.length; i++)
+                        if (m1 <= cars[i]["volume"] && m2 >= cars[i]["volume"])
+                            s += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + "\n";
+                    if (s !== "")
+                        alert(s);
+                    else
+                        alert("Not found");
+                     break;
+                case '4':
+                    m1 = parseInt(prompt("INSERT PRICE START FROM:"));
+                    m2 = parseInt(prompt("INSERT PRICE ENDS FROM:"));
+                    for (let i = 0; i < cars.length; i++)
+                        if (m1 <= cars[i]["price"] && m2 >= cars[i]["price"])
+                            s += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + "\n";
+                    if (s !== "")
+                            alert(s);
+                    else
+                        alert("Not found");
+                    break;
+                case '5':
+                    menuExit = true;
+                    break;
+                default:
+                    alert("Wrong choice");
+                    break;
+            }
+        } while (!menuExit);
+    </script>
+</body>
+</html>

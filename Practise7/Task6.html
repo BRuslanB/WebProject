@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let students = [];
+        let menuExit = false;
+        do { //цикл для меню
+            let n = prompt( "PRESS 1 TO ADD STUDENT\n" +
+                            "PRESS 2 TO LIST STUDENT\n" +
+                            "PRESS 0 TO EXIT");
+            let s = "";
+            switch (n) {
+                case '1':
+                    let name = prompt("INSERT NAME:");
+                    let surname = prompt("INSERT SURNAME:");
+                    let gpa = parseFloat(prompt("INSERT GPA:"));
+                    let newStudent = {}; //создаем новый объект для добавления студента
+                    newStudent.name = name;
+                    newStudent.surname = surname;
+                    newStudent.gpa = gpa;
+                    students.push(newStudent); //добавляем объект в конец массива
+                    break;
+                case '2':
+                    for (let i = 0; i < students.length; i++)
+                        s += students[i]["name"] + " - " + students[i]["surname"] + " - " + students[i]["gpa"] + "\n";
+                    if (s !== "")
+                        alert(s);
+                    else
+                        alert("Student list is empty");
+                    break;
+                case '0':
+                    menuExit = true;
+                    break;
+                default:
+                    alert("Wrong choice");
+                    break;
+            }
+        } while (!menuExit);
+    </script>
+</body>
+</html>

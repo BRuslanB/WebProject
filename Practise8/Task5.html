@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Практическое задание 5</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        <!-- border:1px black solid; временно для проверки -->
+        }
+    </style>
 </head>
 <body>
-
+    <div style="width: 60%;">
+        <div>
+            <img id="img_main" style="width: 100%;">
+        </div>
+        </p>
+        <div id="imgForm" style="display:flex; justify-content: space-around;">
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+            <div style="width: 15%;">
+                <img style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <script>
+        let mas_images = ["https://klike.net/uploads/posts/2018-12/1543995613_6.jpg",
+                          "https://klike.net/uploads/posts/2018-12/1543995606_5.jpg",
+                          "https://klike.net/uploads/posts/2018-12/1543995655_11.jpg",
+                          "https://klike.net/uploads/posts/2018-12/1543995607_10.jpg",
+                          "https://klike.net/uploads/posts/2018-12/1543995632_7.jpg",
+                          "https://klike.net/uploads/posts/2018-12/1543995645_9.jpg"];
+        let i = 0;
+        let images = imgForm.getElementsByTagName('img');
+        img_main.src =  mas_images[i];
+        for (let imgage of images) {
+            imgage.src = mas_images[i];
+            imgage.addEventListener('click', fun_click);
+            i++;
+        };
+        function fun_click(event) {
+            img_main.src = event.target.src;
+        }
+    </script>
 </body>
 </html>

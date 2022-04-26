@@ -3,8 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <title>Практическое задание 6</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            //border:1px black solid; //временно для проверки
+        }
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        .error {height: 25px; color: red;}
+    </style>
 </head>
 <body>
+    <form id="myForm" style="width: 25%;">
+        <div>Email:</div>
+        <div style="width: 100%;">
+            <input type="email" name="email" style="width: 100%;">
+        </div>
+        <div id="emailError" class="error"></div>
+        <div>Password:</div>
+        <div style="width: 100%;">
+            <input type="password" name="password" style="width: 100%;">
+        </div>
+        <div id="passwordError" class="error"></div>
+        <div>Retype Password:</div>
+        <div style="width: 100%;">
+            <input type="password" name="re_password" style="width: 100%;">
+        </div>
+        <div id="re_passwordError" class="error"></div>
+        <button type="button" onclick="checkUser()" style="background-color: black; color: white; padding: 5px 10px;">REGISTER</button>
+    </form>
+    <script>
+        // возьмем уже существующий массив объектов с пользователями
+        let usersArray = [
+            {name: 'Ilyas', login: 'ileke', email: 'ilyas@gmail.com', password: 'ileke123'},
+            {name: 'Aibek', login: 'aieke', email: 'aibek@gmail.com', password: 'aieke123'},
+            {name: 'Eldar', login: 'eleke', email: 'eldar@gmail.com', password: 'eleke123'}
+        ];
+        let emailField = myForm.elements.email; // emailField = элемент ввода логина
+        let passField1 = myForm.elements.password; // passField1 = элемент ввода пароля
+        let passField2 = myForm.elements.re_password; // passField2 = элемент ввода повторного пароля
 
+        //вызывается при нажатии на кнопку
+        function checkUser(){
+            let registred = true;
+            // проверки на пустые поля
+            if (emailField.value === '') {
+                emailError.innerHTML = 'Please enter email';
+                registred = false;
+            }
+            if (passField1.value === '') {
+                passwordError.innerHTML = 'Please enter password';
+                registred = false;
+            }
+            if (passField2.value === '') {
+                re_passwordError.innerHTML = 'Please enter retype password';
+                registred = false;
+            }
+            // дополнительные проверки
+            if (emailField.value !== '' && passField1.value !== '' && passField2.value !== '') {
+                for(let u of usersArray)
+                    if(emailField.value === u.email){
+                        emailError.innerHTML = 'Current email is already use';
+                        registred = false;
+                        break;
+                    }
+                if (passField1.value.length < 6) {
+                    passwordError.innerHTML = 'Password length at least must be 6 symbols';
+                    registred = false;
+                }
+                if (passField1.value !== passField2.value) {
+                    re_passwordError.innerHTML = 'Password are not same';
+                    registred = false;
+                }
+            }
+            // если все проверки прошли успешно
+            if (registred) {
+                alert('Registration was successful');
+                // очищаем элементы ввода
+                emailField.value = '';
+                passField1.value = '';
+                passField2.value = '';
+            }
+        }
+
+        // при фокусировке на элемент ввода нужно убирать сообщение об ошибке
+        function checkFields(){
+            if(event.target == emailField)
+                emailError.innerHTML = '';
+            if(event.target == passField1)
+                passwordError.innerHTML = '';
+            if(event.target == passField2)
+                re_passwordError.innerHTML = '';
+        }
+
+        // реагируем на события фокусировки
+        emailField.onfocus = checkFields;
+        passField1.onfocus = checkFields;
+        passField2.onfocus = checkFields;
+    </script>
 </body>
 </html>

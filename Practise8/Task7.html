@@ -3,8 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Практическое задание 7</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            //border:1px black solid; //временно для проверки
+        }
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-
+    <form id="myForm" style="display: flex; justify-content: space-between; width: 80%;">
+        <div style="display: flex; justify-content: space-between; width: 22%;">
+            <div style="width: 65%;">
+                <div style="font-weight: bold; padding: 5px;">Введите сумму:</div>
+                <div style="width: 100%;">
+                    <input id="val_KZT" type="text" style="padding: 5px; width: 100%;">
+                </div>
+            </div>
+            <div style="width: 30%;">
+                <div style="padding: 5px;">&nbsp;</div>
+                <div style="width: 100%;">
+                    <select id="selectID" style="padding: 5px;">
+                        <option value=KZ>KZT</option>
+                        <option value=US>USD</option>
+                        <option value=EU>EUR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div style="width: 22%;">
+            <div style="font-weight: bold; padding: 5px;">KZT (tenge)</div>
+            <div style="width: 100%;">
+                <input id="val_USD"  type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+            </div>
+        </div>
+        <div style="width: 22%;">
+            <div style="font-weight: bold; padding: 5px;">USD (dollar)</div>
+            <div style="width: 100%;">
+                <input id="val_EUR"  type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+            </div>
+        </div>
+        <div style="width: 22%;">
+            <div style="font-weight: bold; padding: 5px;">EUR (euro)</div>
+            <div style="width: 100%;">
+                <input type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+            </div>
+        </div>
+    </form>
+    <script>
+        let mas_currency = [
+                {currency: "USD", purchase: 429, sale: 431},
+                {currency: "EUR", purchase: 507, sale: 509}
+                ];
+        // функция подсчета
+        function change() {
+            let sumKZ = parseInt(document.getElementById("val_KZT").value);
+            let cur = selectID.value;
+            let sumUS, sumEU;
+            switch (cur) {
+                case "KZ":
+                    val_KZT.innerHTML = '+';
+                    sumUS = sumKZ / mas_currency[0]["sale"];
+                    alert("sumUS"+sumUS);
+                    val_USD.innerHTML = sumUS;
+                    sumEU = sumKZ / mas_currency[1]["sale"];
+                    alert("sumEU"+sumEU);
+                    val_EUR.innerHTML = sumUS;
+                    break;
+                case "US":
+                    sumKZ = sumUS * mas_currency[0]["purchase"];
+                    alert("sumKZ"+sumKZ);
+                    val_KZT.innerHTML = sumKZ;
+                    val_USD.innerHTML = '+';
+                    sumEU = sumKZ / mas_currency[1]["sale"];
+                    alert("sumEU"+sumEU);
+                    val_EUR.innerHTML = sumUS;
+                    break;
+                case "EU":
+                    sumKZ = sumEU * mas_currency[1]["purchase"];
+                    alert("sumKZ"+sumKZ);
+                    val_KZT.innerHTML = sumKZ;
+                    sumUS = sumKZ / mas_currency[0]["sale"];
+                    alert("sumUS"+sumUS);
+                    val_USD.innerHTML = sumUS;
+                    val_EUR.innerHTML = '+';
+                    break;
+            }
+        }
+        // реагируем на события фокусировки
+        val_KZT.onchange = change;
+        selectID.onchange = change;
+    </script>
 </body>
 </html>

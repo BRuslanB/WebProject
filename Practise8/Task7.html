@@ -18,15 +18,15 @@
     <form id="myForm" style="display: flex; justify-content: space-between; width: 80%;">
         <div style="display: flex; justify-content: space-between; width: 22%;">
             <div style="width: 65%;">
-                <div style="font-weight: bold; padding: 5px;">Введите сумму:</div>
+                <div style="padding: 5px;">Введите сумму:</div>
                 <div style="width: 100%;">
-                    <input id="val_KZT" type="text" style="padding: 5px; width: 100%;">
+                    <input id="val_SUM" type="text" style="padding: 5px; width: 100%;">
                 </div>
             </div>
             <div style="width: 30%;">
                 <div style="padding: 5px;">&nbsp;</div>
                 <div style="width: 100%;">
-                    <select id="selectID" style="padding: 5px;">
+                    <select id="val_CUR" style="padding: 5px;">
                         <option value=KZ>KZT</option>
                         <option value=US>USD</option>
                         <option value=EU>EUR</option>
@@ -37,19 +37,19 @@
         <div style="width: 22%;">
             <div style="font-weight: bold; padding: 5px;">KZT (tenge)</div>
             <div style="width: 100%;">
-                <input id="val_USD"  type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+                <input id="val_KZT"  type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
             </div>
         </div>
         <div style="width: 22%;">
             <div style="font-weight: bold; padding: 5px;">USD (dollar)</div>
             <div style="width: 100%;">
-                <input id="val_EUR"  type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+                <input id="val_USD" type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
             </div>
         </div>
         <div style="width: 22%;">
             <div style="font-weight: bold; padding: 5px;">EUR (euro)</div>
             <div style="width: 100%;">
-                <input type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
+                <input id="val_EUR" type="text" readonly="readonly" value="-" style="background-color: lightgrey; padding: 5px; width: 100%;">
             </div>
         </div>
     </form>
@@ -60,42 +60,38 @@
                 ];
         // функция подсчета
         function change() {
-            let sumKZ = parseInt(document.getElementById("val_KZT").value);
-            let cur = selectID.value;
-            let sumUS, sumEU;
+            let cur = val_CUR.value;
+            let sumKZ, sumUS, sumEU;
             switch (cur) {
                 case "KZ":
-                    val_KZT.innerHTML = '+';
+                    sumKZ = parseInt(document.getElementById("val_SUM").value);
+                    val_KZT.value = '-';
                     sumUS = sumKZ / mas_currency[0]["sale"];
-                    alert("sumUS"+sumUS);
-                    val_USD.innerHTML = sumUS;
+                    val_USD.value = sumUS.toFixed(2);
                     sumEU = sumKZ / mas_currency[1]["sale"];
-                    alert("sumEU"+sumEU);
-                    val_EUR.innerHTML = sumUS;
+                    val_EUR.value = sumEU.toFixed(2);
                     break;
                 case "US":
+                    sumUS = parseInt(document.getElementById("val_SUM").value);
+                    val_USD.value = '-';
                     sumKZ = sumUS * mas_currency[0]["purchase"];
-                    alert("sumKZ"+sumKZ);
-                    val_KZT.innerHTML = sumKZ;
-                    val_USD.innerHTML = '+';
+                    val_KZT.value = sumKZ.toFixed(2);
                     sumEU = sumKZ / mas_currency[1]["sale"];
-                    alert("sumEU"+sumEU);
-                    val_EUR.innerHTML = sumUS;
+                    val_EUR.value = sumEU.toFixed(2);
                     break;
                 case "EU":
+                    sumEU = parseInt(document.getElementById("val_SUM").value);
+                    val_EUR.value = '-';
                     sumKZ = sumEU * mas_currency[1]["purchase"];
-                    alert("sumKZ"+sumKZ);
-                    val_KZT.innerHTML = sumKZ;
+                    val_KZT.value = sumKZ.toFixed(2);
                     sumUS = sumKZ / mas_currency[0]["sale"];
-                    alert("sumUS"+sumUS);
-                    val_USD.innerHTML = sumUS;
-                    val_EUR.innerHTML = '+';
+                    val_USD.value = sumUS.toFixed(2);
                     break;
             }
         }
-        // реагируем на события фокусировки
-        val_KZT.onchange = change;
-        selectID.onchange = change;
+        // реагируем на события изменения значения
+        val_SUM.onchange = change;
+        val_CUR.onchange = change;
     </script>
 </body>
 </html>

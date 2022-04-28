@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="load()">
     <div style="display: flex; flex-direction: column; width: 20%;">
         <div style="display: flex; justify-content: space-between; padding: 10px 0;">
             <div style="margin: auto 0; width: 40%;">
@@ -55,8 +55,8 @@
                     PHONE NUMBER:
                 </span>
             </div>
-            <div id="input_phone_id" style="text-align: right; width: 60%;">
-                <input type="text" style="padding: 5px 0; width: 100%;">
+            <div style="text-align: right; width: 60%;">
+                <input id="input_phone_id" type="text" style="padding: 5px 0; width: 100%;">
             </div>
         </div>
         <div style="display: flex; padding: 10px 0;">
@@ -68,9 +68,15 @@
 <script>
     function save(){
         localStorage.setItem('name', input_name_id.value);
-        localStorage.setItem('name', input_surname_id.value);
-        localStorage.setItem('name', select_country_id.value);
-        localStorage.setItem('name', input_phone_id.value);
+        localStorage.setItem('surname', input_surname_id.value);
+        localStorage.setItem('country', select_country_id.value);
+        localStorage.setItem('phone', input_phone_id.value);
     }
-</script>>
+    function load(){
+        input_name_id.value = localStorage.getItem('name');
+        input_surname_id.value = localStorage.getItem('surname');
+        select_country_id.value = localStorage.getItem('country');
+        input_phone_id.value = localStorage.getItem('phone');
+    }
+</script>
 </html>

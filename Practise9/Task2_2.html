@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Практическое задание 2 часть 2</title>
+  <style>
+    * {
+    //border: 1px solid red;
+    }
+    body {
+      front-family: Arial;
+      front-size: 14px;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      border: 1px none lightgray;
+      border-bottom-style: solid;
+    }
+    first {
+      font: 18px bold;
+      padding: 10px;
+    }
+    frame1 {
+      font: 18px bold;
+      padding: 10px;
+    }
+    frame2 {
+      padding: 0 10px;
+    }
+    frame3 {
+      padding: 10px;
+    }
+    .button {
+      border-style: none;
+      background-color: red;
+      color: lightyellow;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <form>
+      <first>
+        <span>NAME</span>
+      </first>>
+      <frame1>
+        <span id="name1"></span>
+      </frame1>
+      <frame2>
+        <span id="price1"></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="save(name1.innerHTML, price1.innerHTML)">- REMOVE</button>
+      </frame3>
+    </form>
+    <form>
+      <first>
+        <span>NAME</span>
+      </first>>
+      <frame1>
+        <span id="name2"></span>
+      </frame1>
+      <frame2>
+        <span id="price2"></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="save(name2.innerHTML, price2.innerHTML)">- REMOVE</button>
+      </frame3>
+    </form>
+    </form>
+      <first>
+        <span>NAME</span>
+      </first>>
+      <frame1>
+        <span id="name3"></span>
+      </frame1>
+      <frame2>
+        <span id="price3"></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="save(name3.innerHTML, price3.innerHTML)">- REMOVE</button>
+      </frame3>
+    </form>
+  </main>
+</body>
+<script>
+  let mas_phones = [];
+  function save(name, price){
+    let phone = {name, price};
+    if (localStorage.phones != null){
+      mas_phones = JSON.parse(localStorage.phones);
+    }
+    mas_phones.push(phone);
+    localStorage.phones = JSON.stringify(mas_phones);
+  }
+  function load(){
+    input_name_id.value = localStorage.getItem('name');
+    input_surname_id.value = localStorage.getItem('surname');
+    select_country_id.value = localStorage.getItem('country');
+    input_phone_id.value = localStorage.getItem('phone');
+  }
+</script>
+</html>

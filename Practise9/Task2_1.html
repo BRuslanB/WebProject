@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Практическое задание 2 часть 1</title>
+    <style>
+        * {
+        //border: 1px solid red;
+        }
+        body {
+            front-family: Arial;
+            front-size: 14px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            margin-top: 5px;
+        }
+        frame1 {
+            font: 18px bold;
+            padding: 10px;
+        }
+        frame2 {
+            padding: 0 10px;
+        }
+        frame3 {
+            padding: 10px;
+        }
+        .button {
+            border-style: none;
+            background-color: darkgreen;
+            color: lightyellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form>
+            <frame1>
+                <span id="name1">IPhone 12 Pro</span>
+                <span>&nbsp;-&nbsp;</span>
+                <span id="price1">1200 USD</span>
+            </frame1>
+            <frame2>
+                <span>
+                    6 GB RAM, Memory 128 GB, double front back camera
+                </span>
+            </frame2>
+            <frame3>
+                <button class="button" onclick="save(name1.innerHTML, price1.innerHTML)">+ ADD TO BASKET</button>
+            </frame3>
+        </form>
+        <form>
+            <frame1>
+                <span id="name2">XIAMOR REDMI NOTE 8</span>
+                <span>&nbsp;-&nbsp;</span>
+                <span id="price2">250 USD</span>
+            </frame1>
+            <frame2>
+                <span>
+                    6 GB RAM, Memory 64 GB, 3 cameras in back
+                </span>
+            </frame2>
+            <frame3>
+                <button class="button" onclick="save(name2.innerHTML, price2.innerHTML)">+ ADD TO BASKET</button>
+            </frame3>
+        </form>
+        <form>
+            <frame1>
+                <span id="name3">ASUS Tuf Gaming Pro</span>
+                <span>&nbsp;-&nbsp;</span>
+                <span id="price3">1500 USD</span>
+            </frame1>
+            <frame2>
+                <span>
+                    24 GB RAM, SSD 1 TB, RX Radeon
+                </span>
+            </frame2>
+            <frame3>
+                <button class="button" onclick="save(name3.innerHTML, price3.innerHTML)">+ ADD TO BASKET</button>
+            </frame3>
+        </form>
+        <form>
+            <frame1>
+                <span id="name4">Samsung Galaxy Note 13</span>
+                <span>&nbsp;-&nbsp;</span>
+                <span id="price4">999 USD</span>
+            </frame1>
+            <frame2>
+                <span>
+                    4 GB RAM, Memory 256 GB, front-back cameras
+                </span>
+            </frame2>
+            <frame3>
+                <button class="button" onclick="save(name4.innerHTML, price4.innerHTML)">+ ADD TO BASKET</button>
+            </frame3>
+        </form>
+    </main>
+</body>
+<script>
+    let mas_phones = [];
+    function save(name, price){
+        let phone = {name, price};
+        if (localStorage.phones != null){
+            mas_phones = JSON.parse(localStorage.phones);
+        }
+        mas_phones.push(phone);
+        localStorage.phones = JSON.stringify(mas_phones);
+    }
+</script>
+</html>

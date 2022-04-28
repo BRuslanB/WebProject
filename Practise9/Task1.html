@@ -3,8 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Практическое задание 1</title>
+    <style>
+        * {
+            //border: 1px solid red;
+        }
+        body {
+            front-family: tahoma;
+            front-size: 16px;
+        }
+    </style>
 </head>
 <body>
-
+    <div style="display: flex; flex-direction: column; width: 20%;">
+        <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <div style="margin: auto 0; width: 40%;">
+                <span>
+                    NAME:
+                </span>
+            </div>
+            <div style="text-align: right; width: 60%;">
+                <input id="input_name_id" type="text" style="padding: 5px 0; width: 100%;">
+            </div>
+        </div>
+        <div style="display: flex; padding: 10px 0;">
+            <div style="margin: auto 0; width: 40%;">
+                <span>
+                    SURNAME:
+                </span>
+            </div>
+            <div style="text-align: right; width: 60%;">
+                <input id="input_surname_id" type="text" style="padding: 5px 0; width: 100%;">
+            </div>
+        </div>
+        <div style="display: flex; padding: 10px 0;">
+            <div style="margin: auto 0; width: 40%;">
+                <span>
+                    COUNTRY:
+                </span>
+            </div>
+            <div style="text-align: right; width: 60%;">
+                <select id="select_country_id" style="padding: 5px 0; width: 100%;">
+                    <option>Kazakhstan</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; padding: 10px 0;">
+            <div style="margin: auto 0; width: 40%;">
+                <span>
+                    PHONE NUMBER:
+                </span>
+            </div>
+            <div id="input_phone_id" style="text-align: right; width: 60%;">
+                <input type="text" style="padding: 5px 0; width: 100%;">
+            </div>
+        </div>
+        <div style="display: flex; padding: 10px 0;">
+            <button style="background-color: black; color: white; padding: 10px 15px;">REGISTER</button>
+            <button onclick="save()" style="background-color: grey; color: white; padding: 10px 15px; margin-left: 10px;">SAVE TO DRAFT</button>
+        </div>
+    </div>
 </body>
+<script>
+    function save(){
+        localStorage.setItem('name', input_name_id.value);
+        localStorage.setItem('name', input_surname_id.value);
+        localStorage.setItem('name', select_country_id.value);
+        localStorage.setItem('name', input_phone_id.value);
+    }
+</script>>
 </html>

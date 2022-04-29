@@ -55,60 +55,155 @@
     </first_row>
     <row>
       <frame1>
-        <span id="name0"></span>
+        <span></span>
       </frame1>
       <frame2>
-        <span id="price0"></span>
+        <span></span>
       </frame2>
       <frame3>
-        <button class="button" onclick="save(name0.innerHTML, price0.innerHTML)">- REMOVE</button>
+        <button class="button" onclick="remove(0)">- REMOVE</button>
       </frame3>
     </row>
     <row>
       <frame1>
-        <span id="name1"></span>
+        <span></span>
       </frame1>
       <frame2>
-        <span id="price1"></span>
+        <span></span>
       </frame2>
       <frame3>
-        <button class="button" onclick="save(name1.innerHTML, price1.innerHTML)">- REMOVE</button>
+        <button class="button" onclick="remove(1)">- REMOVE</button>
       </frame3>
     </row>
     <row>
       <frame1>
-        <span id="name2"></span>
+        <span></span>
       </frame1>
       <frame2>
-        <span id="price2"></span>
+        <span></span>
       </frame2>
       <frame3>
-        <button class="button" onclick="save(name2.innerHTML, price2.innerHTML)">- REMOVE</button>
+        <button class="button" onclick="remove(2)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(3)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(4)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(5)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(6)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(7)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(8)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
+        <span></span>
+      </frame1>
+      <frame2>
+        <span></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="remove(9)">- REMOVE</button>
       </frame3>
     </row>
   </main>
 </body>
 <script>
+  //загрузка из Storage
   let mas_phones = [];
+  if (localStorage.phones != null){
+    mas_phones = JSON.parse(localStorage.phones);
+  }
+  //функция прорисовки формы
   function load(){
-    if (localStorage.phones != null){
-      mas_phones = JSON.parse(localStorage.phones);
+    //использовать цикл по span
+    let count = 0;
+    let spans = document.getElementsByTagName('span');
+    for (let span of spans) {
+      if (parseInt(count/2) < mas_phones.length){
+        if (count%2 == 0)
+          span.innerHTML = mas_phones[parseInt(count/2)]["name"];
+        else
+          span.innerHTML = mas_phones[parseInt(count/2)]["price"];
+      } else
+        span.innerHTML = "";
+      count++;
     }
-    //name0.innerHTML = mas_phones[0]["name"];
-    //price0.innerHTML = mas_phones[0]["price"];
-
-    //использовать цикл по классу
-        let spans = document.getElementsByTagName('span');
-        for (let span of spans) {
-           console.log(span.value);
-        }
-
- /*    for (let i = 0; i < mas_phones.length; i++) {
-        var varname1 = eval("name" + i + ".innerHTML");
-        var varname2 = eval("price" + i + ".innerHTML");
-        window.varname1 = mas_phones[i]["name"];
-        window.varname2 = mas_phones[i]["price"];
-    } */
+    count = 0;
+    let rows = document.getElementsByTagName('row');
+    for (let row of rows) {
+      if (count >= mas_phones.length)
+        row.style.display = 'none';
+      count++;
+    }
+  }
+  //функция удаления элемента
+  function remove(x){
+    //удаляем из массива
+    if (x < mas_phones.length) {
+      mas_phones.splice(x, 1);
+    }
+    //загрузка в Storage
+    localStorage.phones = JSON.stringify(mas_phones);
+    //прорисовка элементов
+    this.load();
   }
 </script>
 </html>

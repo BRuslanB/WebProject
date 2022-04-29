@@ -55,6 +55,17 @@
     </first_row>
     <row>
       <frame1>
+        <span id="name0"></span>
+      </frame1>
+      <frame2>
+        <span id="price0"></span>
+      </frame2>
+      <frame3>
+        <button class="button" onclick="save(name0.innerHTML, price0.innerHTML)">- REMOVE</button>
+      </frame3>
+    </row>
+    <row>
+      <frame1>
         <span id="name1"></span>
       </frame1>
       <frame2>
@@ -75,17 +86,6 @@
         <button class="button" onclick="save(name2.innerHTML, price2.innerHTML)">- REMOVE</button>
       </frame3>
     </row>
-    <row>
-      <frame1>
-        <span id="name3"></span>
-      </frame1>
-      <frame2>
-        <span id="price3"></span>
-      </frame2>
-      <frame3>
-        <button class="button" onclick="save(name3.innerHTML, price3.innerHTML)">- REMOVE</button>
-      </frame3>
-    </row>
   </main>
 </body>
 <script>
@@ -94,12 +94,21 @@
     if (localStorage.phones != null){
       mas_phones = JSON.parse(localStorage.phones);
     }
-    name1.innerHTML = mas_phones[0]["name"];
-    price1.innerHTML = mas_phones[0]["price"];
-    name2.innerHTML = mas_phones[1]["name"];
-    price2.innerHTML = mas_phones[1]["price"];
-    name3.innerHTML = mas_phones[2]["name"];
-    price3.innerHTML = mas_phones[2]["price"];
+    //name0.innerHTML = mas_phones[0]["name"];
+    //price0.innerHTML = mas_phones[0]["price"];
+
+    //использовать цикл по классу
+        let spans = document.getElementsByTagName('span');
+        for (let span of spans) {
+           console.log(span.value);
+        }
+
+ /*    for (let i = 0; i < mas_phones.length; i++) {
+        var varname1 = eval("name" + i + ".innerHTML");
+        var varname2 = eval("price" + i + ".innerHTML");
+        window.varname1 = mas_phones[i]["name"];
+        window.varname2 = mas_phones[i]["price"];
+    } */
   }
 </script>
 </html>

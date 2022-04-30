@@ -42,6 +42,10 @@
             flex-direction: column;
             width: 30%;
         }
+        .link {
+            text-decoration: none;
+            color: wheat;
+        }
         .button {
             border-style: none;
             background-color: midnightblue;
@@ -65,9 +69,9 @@
                 <span>TWITTER</span>
             </frame1>
             <frame2>
-                <span>Tweets &nbsp;</span>
-                <span>Login &nbsp;</span>
-                <span>Register &nbsp;</span>
+                <span>Tweets&nbsp;</span>
+                <span>Login&nbsp;</span>
+                <span><a class="link" href="Task3_1.html">Register</a>&nbsp;</span>
             </frame2>
         </header>
         <form_register>
@@ -75,13 +79,33 @@
             <input id="email_id" type="email" class="padding_box">
             <span class="margin_side">PASSWORD:</span>
             <input id="password_id" type="password" class="padding_box">
-            <button class="button" onclick="signIn()">SIGN IN</button>
+            <button class="button" onclick="signIn(email_id.value, password_id.value)">SIGN IN</button>
         </form_register>
     </main>
 </body>
 <script>
-    let mas_users = [];
-    function signIn(){
+    function signIn(e, p){
+        //поиск по localStorage
+        let pos = -1;
+        if (localStorage.users != null){
+            let mas_users = [];
+            mas_users = JSON.parse(localStorage.users);
+            for (let i = 0; i < mas_users.length; i++)
+                if (e == mas_users[i]["email"] && p == mas_users[i]["password"]) {
+                    pos = i;
+                    break;
+                }
+        }
+        //очищаем поля
+        email_id.value = "";
+        password_id.value = "";
+        //результаты поиска
+        if (pos === -1) {
+            alert("User not found");
+            email_id.focus();
+        } else {
+            window.location.href = "Task3_3.html?" + pos;
+        }
     }
 </script>
 </html>

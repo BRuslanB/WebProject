@@ -3,14 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <title>Практическое задание 1</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg_color {
+            background-color: #04414d;
+        }
+    </style>
 </head>
 <body>
+    <!-- Навигационая панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg_color">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><strong>BITLAB</strong> NEWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">All News</a>
+                    <a class="nav-link" href="#">Sport</a>
+                    <a class="nav-link" href="#">Politics</a>
+                    <a class="nav-link" href="#">Finance</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Раздел поиска -->
     <div class="container">
         <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
+            <nav class="navbar navbar-dark">
+                <div class="container-fluid p-sm-0">
+                    <form class="d-flex col-12">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary bg_color" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Секции -->
+    <div class="container">
+        <div class="row">
+            <!-- Секции 1 -->
+            <div class="col-4">
+                <div class="fs-5 py-1">
+                    <strong>Euro 2020 best scorers</strong>
+                </div>
+                <div>
+                    <table class="table table-success table-striped fs-6">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Player</th>
+                                <th>Minutes</th>
+                                <th>Goals</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cristiano Ronaldo</td>
+                                <td>369</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Patrick Shick</td>
+                                <td>455</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Harry Kane</td>
+                                <td>512</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Karim Benzema</td>
+                                <td>301</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Romelu Lukaku</td>
+                                <td>479</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Emil Forsberg</td>
+                                <td>491</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="fs-5 pb-1">
+                    <strong>FIFA Raiting</strong>
+                </div>
+                <div>
+                    <table class="table border-top border-start border-end fs-6">
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td><strong>Italy</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1442 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td><strong>England</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1321 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td><strong>Belgium</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1301 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td><strong>France</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1287 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td><strong>Spain</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1215 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td><strong>Germany</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1123 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td><strong>France</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1123 pts</button></td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td><strong>Denmark</strong></td>
+                                <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1101 pts</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Секции 2 -->
+            <div class="col-6">2</div>
+
+            <!-- Секции 3 -->
+            <div class="col-2">3</div>
+
         </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>

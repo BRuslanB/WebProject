@@ -5,14 +5,17 @@
     <title>Практическое задание 1</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .bg_color {
+        .bg_color1 {
             background-color: #04414d;
+        }
+        .bg_color2 {
+            background-color: lightgray;
         }
     </style>
 </head>
 <body>
     <!-- Навигационая панель -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg_color">
+    <nav class="navbar navbar-expand-lg navbar-dark bg_color1">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><strong>BITLAB</strong> NEWS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +38,7 @@
                 <div class="container-fluid p-sm-0">
                     <form class="d-flex col-12">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary bg_color" type="submit">Search</button>
+                        <button class="btn btn-primary bg_color1" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
@@ -155,13 +158,21 @@
                     was not just an exercise class for me, but a way of life. I didn't just teach classes at my local Sivananda center,
                     I volunteered to cook and clean there too. Sivananda teachings influenced every aspect of my existence.
                 </div>
-                <div>
+                <div class="m-3">
                     <button class="btn btn-dark">Read More</button>
                 </div>
-                <div>
+                <div class="py-2 bg_color2">
                     34 minutes, author:<strong> Lorenzo Salvador</strong>
                 </div>
-
+                <nav class="m-3">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
             </div>
             <!-- Секции 3 -->
             <div class="col-2">3

@@ -5,17 +5,41 @@
     <title>Практическое задание 1</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .navbar-fixed-top {
+            margin: 0 auto;
+            width: 80%;
+        }
+        .pagination a {
+            color: black;
+            float: left;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+        .pagination a.active {
+            background-color: black;
+            color: white;
+        }
+        .card_size {
+            border-radius: 0;
+            width:100%
+        }
+        .no_border {
+            border-style: none;
+        }
         .bg_color1 {
-            background-color: #04414d;
+            background-color: #004466;
         }
         .bg_color2 {
             background-color: lightgray;
+        }
+       .bg_color3 {
+            background-color: #f5f5f5;
         }
     </style>
 </head>
 <body>
     <!-- Навигационая панель -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg_color1">
+    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg_color1">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><strong>BITLAB</strong> NEWS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +62,7 @@
                 <div class="container-fluid p-sm-0">
                     <form class="d-flex col-12">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary bg_color1" type="submit">Search</button>
+                        <button class="btn btn-primary no_border bg_color1" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
@@ -47,10 +71,10 @@
     <!-- Секции -->
     <div class="container">
         <div class="row">
-            <!-- Секции 1 -->
-            <div class="col-4">
-                <div class="fs-5 py-1">
-                    <strong>Euro 2020 best scorers</strong>
+            <!-- Секция 1 -->
+            <div class="col-3">
+                <div class="fs-5 py-1 fw-bold">
+                    Euro 2020 best scorers
                 </div>
                 <div>
                     <table class="table table-success table-striped fs-6">
@@ -64,119 +88,139 @@
                         <tbody>
                             <tr>
                                 <td>Cristiano Ronaldo</td>
-                                <td>369</td>
-                                <td>5</td>
+                                <td class="text-center">369</td>
+                                <td class="text-center">5</td>
                             </tr>
                             <tr>
                                 <td>Patrick Shick</td>
-                                <td>455</td>
-                                <td>5</td>
+                                <td class="text-center">455</td>
+                                <td class="text-center">5</td>
                             </tr>
                             <tr>
                                 <td>Harry Kane</td>
-                                <td>512</td>
-                                <td>4</td>
+                                <td class="text-center">512</td>
+                                <td class="text-center">4</td>
                             </tr>
                             <tr>
                                 <td>Karim Benzema</td>
-                                <td>301</td>
-                                <td>4</td>
+                                <td class="text-center">301</td>
+                                <td class="text-center">4</td>
                             </tr>
                             <tr>
                                 <td>Romelu Lukaku</td>
-                                <td>479</td>
-                                <td>4</td>
+                                <td class="text-center">479</td>
+                                <td class="text-center">4</td>
                             </tr>
                             <tr>
                                 <td>Emil Forsberg</td>
-                                <td>491</td>
-                                <td>4</td>
+                                <td class="text-center">491</td>
+                                <td class="text-center">4</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="fs-5 pb-1">
-                    <strong>FIFA Raiting</strong>
+                <div class="fs-5 pb-1 fw-bold">
+                    FIFA Raiting
                 </div>
                 <div>
                     <table class="table border-top border-start border-end fs-6">
                         <tbody>
                             <tr>
-                                <td>1.</td>
-                                <td><strong>Italy</strong></td>
+                                <td class="text-center">1.</td>
+                                <td class="ps-0"><strong>Italy</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1442 pts</button></td>
                             </tr>
                             <tr>
-                                <td>2.</td>
-                                <td><strong>England</strong></td>
+                                <td class="text-center">2.</td>
+                                <td class="ps-0"><strong>England</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1321 pts</button></td>
                             </tr>
                             <tr>
-                                <td>3.</td>
-                                <td><strong>Belgium</strong></td>
+                                <td class="text-center">3.</td>
+                                <td class="ps-0"><strong>Belgium</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1301 pts</button></td>
                             </tr>
                             <tr>
-                                <td>4.</td>
-                                <td><strong>France</strong></td>
+                                <td class="text-center">4.</td>
+                                <td class="ps-0"><strong>France</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1287 pts</button></td>
                             </tr>
                             <tr>
-                                <td>5.</td>
-                                <td><strong>Spain</strong></td>
+                                <td class="text-center">5.</td>
+                                <td class="ps-0"><strong>Spain</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1215 pts</button></td>
                             </tr>
                             <tr>
-                                <td>6.</td>
-                                <td><strong>Germany</strong></td>
+                                <td class="text-center">6.</td>
+                                <td class="ps-0"><strong>Germany</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1123 pts</button></td>
                             </tr>
                             <tr>
-                                <td>7.</td>
-                                <td><strong>France</strong></td>
+                                <td class="text-center">7.</td>
+                                <td class="ps-0"><strong>France</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1123 pts</button></td>
                             </tr>
                             <tr>
-                                <td>8.</td>
-                                <td><strong>Denmark</strong></td>
+                                <td class="text-center">8.</td>
+                                <td class="ps-0"><strong>Denmark</strong></td>
                                 <td class="text-end"><button class="btn btn-success btn-sm rounded-pill">1101 pts</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <!-- Секции 2 -->
-            <div class="col-6">
-                <div class="fs-4 py-1">
-                    <strong>Investigating my yoga school</strong>
+            <!-- Секция 2 -->
+            <div class="col-7 px-0">
+                <div class="fs-3 fw-bold py-1">
+                    Investigating my yoga school
                 </div>
                 <div>
                     <img src="/img/pic1.png" width="100%">
                 </div>
-                <div>
-                    Since I discovered yoga in my mid-20s, it had become a huge part of my world/ Like my devoted yogis, it
+                <div class="mt-2 mb-3">
+                    Since I discovered yoga in my mid-20s, it had become a huge part of my world. Like my devoted yogis, it
                     was not just an exercise class for me, but a way of life. I didn't just teach classes at my local Sivananda center,
                     I volunteered to cook and clean there too. Sivananda teachings influenced every aspect of my existence.
                 </div>
-                <div class="m-3">
+                <div>
                     <button class="btn btn-dark">Read More</button>
                 </div>
-                <div class="py-2 bg_color2">
+                <div class="py-2 my-3 bg_color3">
                     34 minutes, author:<strong> Lorenzo Salvador</strong>
                 </div>
-                <nav class="m-3">
+                <nav>
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                 </nav>
             </div>
-            <!-- Секции 3 -->
-            <div class="col-2">3
-
+            <!-- Секция 3 -->
+            <div class="col-2">
+                <div class="card my-2 bg_color2 card_size">
+                    <h5 class="card-title m-1">Djokovic wins again</h5>
+                    <img src="/img/pic2.png" class="card-img-top p-1" alt="Djokovic wins again">
+                    <div class="card-body p-1">
+                        <span class="card-text">Djokovic makes fast start on Wimbeldon </span>
+                    </div>
+                </div>
+                <div class="card bg_color2 card_size">
+                    <h5 class="card-title m-1">Japan landslide</h5>
+                    <img src="/img/pic3.png" class="card-img-top p-1" alt="Japan landslide">
+                    <div class="card-body p-1">
+                        <span class="card-text">Elderly couple among survivors pulled from buried home</span>
+                    </div>
+                </div>
+                <div class="card my-2 bg_color2 card_size">
+                    <h5 class="card-title m-1">BITLAB Worklife</h5>
+                    <img src="/img/pic4.png" class="card-img-top p-1" alt="BITLAB Worklife">
+                    <div class="card-body p-1">
+                        <span class="card-text">The damaging effects of 'boreout' at work</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

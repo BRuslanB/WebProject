@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprint Task 4 (Register Page)</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error {
+            height: 25px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="nameField" class="form-label">Your name</label>
+                    <input id="nameField" type="text" class="form-control">
+                    <div id="nameError" class="error"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="loginField" class="form-label">Your login</label>
+                    <input id="loginField" type="text" class="form-control">
+                    <div id="loginError" class="error"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordField" class="form-label">Your password</label>
+                    <input id="passwordField" type="password" class="form-control">
+                    <div id="passwordError" class="error"></div>
+                </div>
+                <div class="mb-3 d-flex justify-content-between" >
+                    <button class="btn btn-primary" onclick="register()">Register</button>
+                    <button class="btn btn-outline-primary" onclick="loginPage()">To Login Page</button>
+                </div>
+                <div id="messageError" class="error"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+<script>
+    //вызов функции Register
+    function register() {
+        let users = [];
+        // проверки на пустые поля
+        let name = nameField.value;
+        if (name === null || name === '') {
+            nameError.innerHTML = 'Please enter your name...';
+            nameField.focus();
+            return;
+        }
+        let login = loginField.value;
+        if (login === null || login === '') {
+            loginError.innerHTML = 'Please enter your login...';
+            loginField.focus();
+            return;
+        }
+        let password = passwordField.value;
+        if (password === null || password === '') {
+            passwordError.innerHTML = 'Please enter your password...';
+            passwordField.focus();
+            return;
+        }
+        let user = {name, login, password};
+        //обновляем массив и localStorage
+        if (localStorage.users != null){
+            let loginExist = false;
+            users = JSON.parse(localStorage.users);
+            for (let i = 0; i < users.length; i++)
+                if (login == users[i]["login"]) {
+                    messageError.innerHTML = 'User with this login already exist...';
+                    loginField.value = "";
+                    passwordField.value = "";
+                    loginField.focus();
+                    loginExist = true;
+                    break;
+                }
+            if (loginExist) return;
+        }
+        users.push(user);
+        localStorage.users = JSON.stringify(users);
+        //очищаем поля
+        nameField.value = "";
+        loginField.value = "";
+        passwordField.value = "";
+    }
+
+    // реагируем на события фокусировки
+    nameField.onblur = function() {
+        nameError.innerHTML = '';
+        messageError.innerHTML = '';
+    }
+    loginField.onblur = function() {
+        loginError.innerHTML = '';
+        messageError.innerHTML = '';
+    }
+    passwordField.onblur = function() {
+        passwordError.innerHTML = '';
+        messageError.innerHTML = '';
+    }
+/*    nameField.focus = function() {
+        messageError.innerHTML = '';
+    }
+    loginField.focus = function() {
+        messageError.innerHTML = '';
+    }
+    passwordField.focus = function() {
+        messageError.innerHTML = '';
+    } */
+
+    // переходим на страничку Login
+    function loginPage() {
+        window.location = "Sprint_Task4_2.html";
+    }
+</script>
+</html>

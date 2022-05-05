@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+    <!-- Main Page -->
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -28,24 +29,26 @@
                 <div class="mb-3 d-flex justify-content-between" >
                     <button class="btn btn-primary" onclick="login()">Login</button>
                     <button class="btn btn-outline-primary" onclick="registerPage()">To Register Page</button>
+                    <!-- вызов модального окна по кнопке
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Launch modal</button> -->
                 </div>
                 <div id="messageError" class="error"></div>
             </div>
         </div>
     </div>
     <!-- Modal dialog-->
-    <div id="myModal" class="modal fade">
+    <div id="myModal" class="modal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">Welcome!</h4>
                 </div>
                 <div class="modal-body">
                     <p>Authentication was successful</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
